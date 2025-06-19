@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext} from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
 import { LuLogIn } from "react-icons/lu";
+import ThemeToggle from "./ThemeToggle";
 
 const links = (
   <>
@@ -114,7 +115,8 @@ const NavBar = () => {
           <ul className="menu menu-horizontal text-lg space-x-5">{links}</ul>
         </div>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end space-x-3">
+       <ThemeToggle></ThemeToggle>
         {user ? (
           <div className="relative group flex items-center gap-2">
             <div className="flex items-center gap-2 cursor-pointer">
