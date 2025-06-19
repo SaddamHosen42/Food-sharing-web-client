@@ -75,7 +75,7 @@ const NavBar = () => {
     });
   };
   return (
-    <div className="navbar justify-between  shadow-lg px-8 fixed top-0 z-10 w-full ">
+    <div className="navbar justify-between  shadow-lg px-8 fixed top-0 z-10 w-full bg-base-100">
       <div className=" navbar-start items-center">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -129,7 +129,7 @@ const NavBar = () => {
               </div>
             </div>
             <button
-              className="btn bg-[#16610E] btn-sm  text-white rounded-none lg:hidden"
+              className="btn bg-yellow-600 hover:bg-yellow-700 btn-sm  text-white rounded-none"
               onClick={handleLogOut}
             >
               Logout
