@@ -8,6 +8,7 @@ import Login from "../pages/authentication-form/Login";
 import Register from "../pages/authentication-form/Register";
 import FoodRequest from "../pages/FoodRequest";
 import PrivateRoute from "./PrivateRoute";
+import axios from "axios";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ export const router = createBrowserRouter([
       {
         path: "available-foods",
         Component: AvailableFoods,
+        loader:()=>axios.get("http://localhost:5000/available-foods")
       },
       {
         path: "add-food",
