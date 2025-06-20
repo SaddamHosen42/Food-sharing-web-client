@@ -114,9 +114,11 @@ const FoodRequestModal = ({ food, user, closeModal }) => {
           ></textarea>
 
           <div className="modal-action">
+          <link to="food-request">
             <button type="submit" className="btn btn-warning text-white">
               Submit Request
             </button>
+          </link>
             <button onClick={closeModal} type="button" className="btn">
               Cancel
             </button>
