@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router";
+import useAuth from "../hooks/useAuth";
+import FoodRequestModal from "../Modal/FoodRequestModal";
 
 const FoodDetails = () => {
+  const {user}=useAuth();
   const food = useLoaderData().data;
+  const [showModal, setShowModal] = useState(false);
   console.log(food);
   const {
     name,
@@ -16,12 +20,12 @@ const FoodDetails = () => {
     donorImage,
     status,
   } = food;
-
+ 
   return (
     <div className="mt-25 container mx-auto w-[90%]">
-        <h1 className="text-4xl text-center font-bold text-amber-400 my-10">
-            Food Details
-        </h1>
+      <h1 className="text-4xl text-center font-bold text-amber-400 my-10">
+        Food Details
+      </h1>
       <div className="max-w-4xl mx-auto p-6 bg-base-100 rounded-xl shadow-xl my-10 border border-amber-300">
         <img
           src={image}
@@ -64,9 +68,19 @@ const FoodDetails = () => {
         </div>
 
         <div className="mt-6">
-          <button className="btn btn-warning text-white">
+          <button
+           onClick={() => setShowModal(true)}
+            className="btn btn-warning text-white"
+          >
             Request This Food
           </button>
+           {showModal && (
+        <FoodRequestModal
+          food={food}
+          user={user}
+          closeModal={() => setShowModal(false)}
+        />
+      )}
         </div>
       </div>
     </div>
