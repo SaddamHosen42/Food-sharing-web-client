@@ -1,6 +1,7 @@
 import React from "react";
 import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const AddFoods = () => {
   const { user } = useAuth();
@@ -11,16 +12,9 @@ const AddFoods = () => {
     const newFood = Object.fromEntries(formData.entries());
     console.log(newFood);
     //send data to the server
-    fetch("http://localhost:5000/foods", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newFood),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.insertedId) {
+    axios.post("http://localhost:5000/add-food", newFood)
+      .then((res) => {
+        if (res.data.insertedId) {
           Swal.fire({
             icon: "success",
             title: "Food Added Successfully!",
@@ -29,7 +23,16 @@ const AddFoods = () => {
           });
           form.reset();
         }
+      })
+      .catch((error) => {
+        console.error("Error adding food:", error);
+        Swal.fire({
+          icon: "error",
+          title: "Failed to Add Food",
+          text: "Please try again later.",
+        });
       });
+
   };
 
   return (
