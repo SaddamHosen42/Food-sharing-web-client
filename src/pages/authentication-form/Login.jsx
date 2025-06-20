@@ -72,7 +72,7 @@ const Login = () => {
   return (
     <div className="flex justify-center items-center min-h-[calc(100vh-100px)]  mb-10 mt-20">
       <div className="card bg-base-100 w-sm md:w-[500px] shrink-0 shadow-2xl mx-auto mt-10">
-        <h1 className="text-3xl font-bold text-center py-4">Login Your Account</h1>
+        <h1 className="text-3xl font-bold text-center py-4 text-amber-500">Login Your Account</h1>
         <div className="card-body px-8">
           {errorMessage && (
             <p className="text-red-500 text-center">{errorMessage}</p>
@@ -104,12 +104,12 @@ const Login = () => {
               </button>
             </div>
 
-            <button className="btn bg-green-800 hover:bg-green-900 text-white mt-4 text-lg">Login</button>
+            <button className="btn bg-amber-400 hover:bg-amber-500 text-white mt-4 text-lg">Login</button>
             <div className="mt-4 text-center text-lg">
               <p>
                 Don't have an account?{" "}
                 <span>
-                  <Link to="/register" className="text-green-800">
+                  <Link to="/register" className="text-amber-400">
                     Register
                   </Link>
                 </span>
@@ -118,7 +118,7 @@ const Login = () => {
             <div className="divider text-lg">OR</div>
             <button
               onClick={handleGoogleSignIn}
-              className="btn btn-outline border-green-600 text-lg"
+              className="btn  border-amber-500 text-lg bg-amber-400 hover:bg-amber-500"
             >
               <svg
                 aria-label="Google logo"

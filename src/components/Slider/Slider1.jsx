@@ -18,7 +18,7 @@ const Slider1 = () => {
           <p className="mb-5">
             “Redistribute perfectly good meals before they spoil—help us fight food waste and nourish communities, one plate at a time.”
           </p>
-          <button className="btn btn-primary">Get Started</button>
+          <button className="btn  border-amber-400 rounded-none bg-amber-400 text-white">Get Started</button>
         </div>
       </div>
     </div>

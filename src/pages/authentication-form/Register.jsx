@@ -78,7 +78,7 @@ const Register = () => {
   return (
     <div className="flex justify-center  items-center  mb-10 mt-20 min-h-[calc(100vh-150px)]">
       <div className="card bg-base-100 w-sm md:w-[500px]  shrink-0 shadow-2xl mx-auto mt-10">
-        <h1 className="text-3xl font-bold text-center py-4">
+        <h1 className="text-3xl font-bold text-center py-4 text-amber-500">
           Create an account
         </h1>
         <div className="card-body px-8">
@@ -132,7 +132,7 @@ const Register = () => {
 
             <button
               type="submit"
-              className="btn bg-green-800 text-white hover:bg-green-900 mt-4 text-lg"
+              className="btn bg-amber-400 text-white hover:bg-amber-500 mt-4 text-lg"
             >
               Register
             </button>
@@ -140,7 +140,7 @@ const Register = () => {
               <p>
                 Allreday have an account?{" "}
                 <span>
-                  <Link to="/login" className="text-green-800 ">
+                  <Link to="/login" className="text-amber-400 ">
                     Login
                   </Link>
                 </span>
@@ -149,7 +149,7 @@ const Register = () => {
             <div className="divider text-lg">OR</div>
             <button
               onClick={handleGoogleSignIn}
-              className="btn border-green-600 text-lg"
+              className="btn border-amber-500 text-lg bg-amber-400 hover:bg-amber-500"
             >
               <svg
                 aria-label="Google logo"

@@ -1,10 +1,9 @@
-import React, { useContext} from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
 import { LuLogIn, LuLogOut } from "react-icons/lu";
 import ThemeToggle from "./ThemeToggle";
-
 
 const links = (
   <>
@@ -38,7 +37,15 @@ const links = (
         isActive ? " underline  text-yellow-500" : ""
       }
     >
-      My Foods
+      Manage My Foods
+    </NavLink>
+    <NavLink
+      to="/food-request"
+      className={({ isActive }) =>
+        isActive ? " underline  text-yellow-500" : ""
+      }
+    >
+      My Food Request
     </NavLink>
   </>
 );
@@ -100,9 +107,27 @@ const NavBar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu bg-base-100 menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             {links}
+            <div className="flex flex-col mt-2 gap-2 md:hidden">
+                 
+              <Link
+                to="/login"
+                className="btn btn-sm btn-outline border-yellow-500 text-yellow-500 hover:bg-yellow-600  hover:text-white rounded-none"
+              >
+                Login
+                <LuLogIn lg:size={20} />
+              </Link>
+            
+              <Link
+                to="/register"
+                className="btn btn-sm btn-outline border-yellow-500 text-yellow-500 hover:bg-yellow-600  hover:text-white rounded-none"
+              >
+                Register
+                <LuLogIn lg:size={20} />
+              </Link>
+            </div>
           </ul>
         </div>
         <Link to="/" className=" hidden md:flex gap-1 items-center">
@@ -118,33 +143,51 @@ const NavBar = () => {
         </div>
       </div>
       <div className="navbar-end space-x-3">
-       <ThemeToggle></ThemeToggle>
+        <ThemeToggle></ThemeToggle>
         {user ? (
           <div className="relative group flex items-center gap-2">
-            <div className="flex items-center gap-2 cursor-pointer">
-              <div className="w-10 h-10 rounded-full ring ring-success ring-offset-base-100 ring-offset-2 overflow-hidden">
-                <img
-                  className="w-full h-full object-cover"
-                  src={
-                    user.photoURL ||
-                    "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                  }
-                    
-                />
-                
+            <div className="dropdown dropdown-end">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle avatar"
+              >
+                <div className="relative group inline-block w-10 h-10 rounded-full ring ring-success ring-offset-base-100 ring-offset-2 overflow-hidden">
+                  <img
+                    className="w-full h-full object-cover "
+                    alt="Tailwind CSS Navbar component"
+                    src={
+                      user.photoURL ||
+                      "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                    }
+                  />
+                </div>
               </div>
-              
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-center"
+              >
+                <p>{user.displayName}</p>
+                <p>{user.email}</p>
+                <button
+                  className="btn bg-yellow-500 hover:bg-yellow-600 btn-sm  text-white rounded-none md:hidden"
+                  onClick={handleLogOut}
+                >
+                  Logout
+                  <LuLogOut lg:size={20} />
+                </button>
+              </ul>
             </div>
             <button
-              className="btn bg-yellow-500 hover:bg-yellow-600 btn-sm  text-white rounded-none"
+              className="btn bg-yellow-500 hover:bg-yellow-600 btn-sm  text-white rounded-none hidden md:flex"
               onClick={handleLogOut}
             >
               Logout
-                <LuLogOut lg:size={20} />
+              <LuLogOut lg:size={20} />
             </button>
           </div>
         ) : (
-          <div className="flex items-center gap-3">
+          <div className="items-center gap-3 hidden lg:flex ">
             <div>
               <Link
                 to="/login"

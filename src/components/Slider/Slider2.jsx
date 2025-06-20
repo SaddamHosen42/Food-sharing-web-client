@@ -12,14 +12,17 @@ const Slider2 = () => {
       <div className="hero-overlay"></div>
       <div className="hero-content text-neutral-content text-center">
         <div className="max-w-md">
-          <h1 className="mb-5 text-5xl font-bold">
-            Bridge <span className="text-yellow-500">the Plate,</span> Bridge the Gap
+          <h3 className="mb-1 text-3xl font-bold">
+            Bridge <span className="text-amber-400">the Plate </span>
+          </h3>
+          <h1 className="text-5xl mb-5 font-bold">
+            Bridge the Gap
           </h1>
           <p className="mb-5">
             “Your extra food can transform into hope—join our network to reduce
             waste and ensure everyone at the table is fed.”
           </p>
-          <button className="btn btn-primary">Get Started</button>
+          <button className="btn  border-amber-400 rounded-none bg-amber-400 text-white">Get Started</button>
         </div>
       </div>
     </div>

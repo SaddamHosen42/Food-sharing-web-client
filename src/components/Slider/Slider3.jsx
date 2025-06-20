@@ -20,7 +20,7 @@ const Slider3 = () => {
             families and individuals facing hunger, creating a more sustainable
             and caring world.”
           </p>
-          <button className="btn btn-primary">Get Started</button>
+           <button className="btn border-amber-400 rounded-none bg-amber-400 text-white">Get Started</button>
         </div>
       </div>
     </div>
