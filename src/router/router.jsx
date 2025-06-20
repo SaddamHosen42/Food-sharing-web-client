@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import RootLayOut from "../layouts/RootLayOut";
 import Home from "../pages/Home";
+import FoodDetails from "../pages/FoodDetails";
 import AvailableFoods from "../pages/AvailableFoods";
 import AddFoods from "../pages/AddFoods";
 import MyFoods from "../pages/MyFoods";
@@ -45,6 +46,15 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <FoodRequest></FoodRequest>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path:"food-details/:id",
+        loader: ({params}) => axios.get(`http://localhost:5000/foods/${params.id}`),
+        element: (
+          <PrivateRoute>
+           <FoodDetails></FoodDetails>
           </PrivateRoute>
         ),
       },

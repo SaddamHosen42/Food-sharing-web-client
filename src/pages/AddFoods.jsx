@@ -116,7 +116,7 @@ const AddFoods = () => {
         <div>
           <legend className="text-lg font-medium mb-2">Donor Email</legend>
           <input
-            name="userEmail"
+            name="donorEmail"
             type="email"
             className="input input-bordered w-full"
             placeholder="Enter user email"
@@ -129,7 +129,7 @@ const AddFoods = () => {
         <div>
           <legend className="text-lg font-medium mb-2">Donor Image</legend>
           <input
-            name="userEmail"
+            name="donorImage"
             type="email"
             className="input input-bordered w-full"
             placeholder="Enter user email"
@@ -143,7 +143,7 @@ const AddFoods = () => {
         <div>
           <legend className="text-lg font-medium mb-2">Donor Name</legend>
           <input
-            name="userName"
+            name="donorName"
             type="text"
             className="input input-bordered w-full"
             placeholder="Enter your name"
