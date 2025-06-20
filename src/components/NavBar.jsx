@@ -2,15 +2,16 @@ import React, { useContext} from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
-import { LuLogIn } from "react-icons/lu";
+import { LuLogIn, LuLogOut } from "react-icons/lu";
 import ThemeToggle from "./ThemeToggle";
+
 
 const links = (
   <>
     <NavLink
       to="/"
       className={({ isActive }) =>
-        isActive ? " underline text-yellow-600" : ""
+        isActive ? " underline text-yellow-500" : ""
       }
     >
       Home
@@ -18,7 +19,7 @@ const links = (
     <NavLink
       to="/available-foods"
       className={({ isActive }) =>
-        isActive ? " underline text-yellow-600" : ""
+        isActive ? " underline text-yellow-500" : ""
       }
     >
       Available Foods
@@ -26,7 +27,7 @@ const links = (
     <NavLink
       to="/add-food"
       className={({ isActive }) =>
-        isActive ? " underline  text-yellow-600" : ""
+        isActive ? " underline  text-yellow-500" : ""
       }
     >
       Add Food
@@ -34,7 +35,7 @@ const links = (
     <NavLink
       to="/my-foods"
       className={({ isActive }) =>
-        isActive ? " underline  text-yellow-600" : ""
+        isActive ? " underline  text-yellow-500" : ""
       }
     >
       My Foods
@@ -43,6 +44,7 @@ const links = (
 );
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
+  console.log("user", user);
   const handleLogOut = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -127,14 +129,18 @@ const NavBar = () => {
                     user.photoURL ||
                     "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
                   }
+                    
                 />
+                
               </div>
+              
             </div>
             <button
-              className="btn bg-yellow-600 hover:bg-yellow-700 btn-sm  text-white rounded-none"
+              className="btn bg-yellow-500 hover:bg-yellow-600 btn-sm  text-white rounded-none"
               onClick={handleLogOut}
             >
               Logout
+                <LuLogOut lg:size={20} />
             </button>
           </div>
         ) : (
@@ -142,7 +148,7 @@ const NavBar = () => {
             <div>
               <Link
                 to="/login"
-                className="btn btn-sm lg:btn-md btn-outline border-yellow-600 text-yellow-600 hover:bg-yellow-700  hover:text-white rounded-none"
+                className="btn btn-sm lg:btn-md btn-outline border-yellow-500 text-yellow-500 hover:bg-yellow-600  hover:text-white rounded-none"
               >
                 Login
                 <LuLogIn lg:size={20} />
@@ -151,7 +157,7 @@ const NavBar = () => {
             <div>
               <Link
                 to="/register"
-                className="btn btn-sm lg:btn-md  bg-yellow-700 text-white hover:bg-yellow-800 rounded-none"
+                className="btn btn-sm lg:btn-md  bg-yellow-500 text-white hover:bg-yellow-600 rounded-none"
               >
                 Register
                 <LuLogIn lg:size={20} />

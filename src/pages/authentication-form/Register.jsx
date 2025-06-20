@@ -11,6 +11,7 @@ const Register = () => {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -23,7 +24,7 @@ const Register = () => {
     const passRE = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
     if (!passRE.test(password)) {
       setErrorMessage(
-        "Password must be at least 6 characters long and contain at least one uppercase letter, one lowercase letter, and one number."
+        "Password must be at least 6 characters long and contain at least one uppercase letter, one lowercase letter."
       );
       return;
     }
@@ -37,38 +38,16 @@ const Register = () => {
           .then(() => {
             setUser({ ...user, displayName: name, photoURL: photo });
             navigate(location.state || "/");
-          })
-          .catch((error) => {
-            setErrorMessage(error.message);
-            setUser(user);
-          });
-        const userProfile = {
-          email,
-          name,
-          photo,
-          password,
-          creationTime: result.user?.metadata?.creationTime,
-          lastSignInTime: result.user?.metadata?.lastSignInTime,
-        };
-
-        // save profile info in the db
-        fetch("https://plant-care-server-theta.vercel.app/users", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(userProfile),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.insertedId) {
-              Swal.fire({
+               Swal.fire({
                 icon: "success",
                 title: "Your account is created.",
                 showConfirmButton: false,
                 timer: 1500,
               });
-            }
+          })
+          .catch((error) => {
+            setErrorMessage(error.message);
+            setUser(user);
           });
         form.reset();
       })
@@ -84,7 +63,6 @@ const Register = () => {
         const user = result.user;
         navigate(location.state || "/");
         Swal.fire({
-          // position: "top-end",
           icon: "success",
           title: "Login successful!",
           text: `Welcome, ${user.displayName}!`,
