@@ -43,7 +43,6 @@ export const router = createBrowserRouter([
       },
       {
         path: "food-request",
-        loader: () => axios.get("http://localhost:5000/food-requests"),
         element: (
           <PrivateRoute>
             <FoodRequest></FoodRequest>

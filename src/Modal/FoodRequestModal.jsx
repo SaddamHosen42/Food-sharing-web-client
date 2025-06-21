@@ -1,8 +1,10 @@
 import axios from "axios";
 import { format } from "date-fns";
+import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 
 const FoodRequestModal = ({ food, user, closeModal }) => {
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -41,6 +43,7 @@ const FoodRequestModal = ({ food, user, closeModal }) => {
           timer: 1500,
         });
         closeModal();
+        navigate("/food-request");
       }
     } catch (err) {
       console.error(err);
@@ -114,11 +117,9 @@ const FoodRequestModal = ({ food, user, closeModal }) => {
           ></textarea>
 
           <div className="modal-action">
-          <link to="food-request">
             <button type="submit" className="btn btn-warning text-white">
               Submit Request
             </button>
-          </link>
             <button onClick={closeModal} type="button" className="btn">
               Cancel
             </button>
