@@ -1,8 +1,25 @@
 import React, { use } from "react";
+import { GoArrowLeft } from "react-icons/go";
 import { RiDeleteBin5Fill } from "react-icons/ri";
+import { Link } from "react-router";
 
 const MyFoodList = ({ myFoodPromise }) => {
   const foods = use(myFoodPromise);
+  if (!foods || foods.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center ">
+        <p className="text-center text-gray-500 mb-5">
+          You have not added any food yet. Please add the foods.
+        </p>
+        <Link
+          to="/add-food"
+          className="btn bg-amber-400 hover:bg-amber-500 text-white"
+        >
+          <GoArrowLeft size={20} /> Add Food
+        </Link>
+      </div>
+    );
+  }
   return (
     <table className="table table-zebra w-full border border-gray-300">
       <thead className="bg-amber-200 text-amber-600">
@@ -22,8 +39,12 @@ const MyFoodList = ({ myFoodPromise }) => {
             <td>{req.status}</td>
             <td>{req.expiredDate}</td>
             <td className="flex items-center gap-2">
-              <button className="btn btn-sm bg-amber-200 text-black">Update</button>
-             <button className="btn btn-sm bg-red-500 text-white"> <RiDeleteBin5Fill /></button>
+              <button className="btn btn-sm bg-amber-200 text-black hover:bg-amber-300">
+                Update
+              </button>
+              <button className="btn btn-sm bg-red-500 text-white">
+                <RiDeleteBin5Fill />
+              </button>
             </td>
           </tr>
         ))}
