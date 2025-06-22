@@ -2,9 +2,11 @@ import React from "react";
 import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { useNavigate } from "react-router";
 
 const AddFoods = () => {
   const { user } = useAuth();
+  const navigate = useNavigate();
   const handleAddFood = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -22,6 +24,7 @@ const AddFoods = () => {
             timer: 1500,
           });
           form.reset();
+          navigate("/available-foods");
         }
       })
       .catch((error) => {

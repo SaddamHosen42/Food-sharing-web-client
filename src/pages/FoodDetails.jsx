@@ -4,10 +4,10 @@ import useAuth from "../hooks/useAuth";
 import FoodRequestModal from "../Modal/FoodRequestModal";
 
 const FoodDetails = () => {
-  const {user}=useAuth();
+  const { user } = useAuth();
   const food = useLoaderData().data;
   const [showModal, setShowModal] = useState(false);
-  console.log(food);
+  // console.log(food);
   const {
     name,
     image,
@@ -20,7 +20,7 @@ const FoodDetails = () => {
     donorImage,
     status,
   } = food;
- 
+
   return (
     <div className="mt-25 container mx-auto w-[90%]">
       <h1 className="text-4xl text-center font-bold text-amber-400 my-10">
@@ -68,19 +68,25 @@ const FoodDetails = () => {
         </div>
 
         <div className="mt-6">
-          <button
-           onClick={() => setShowModal(true)}
-            className="btn btn-warning text-white"
-          >
-            Request This Food
-          </button>
-           {showModal && (
-        <FoodRequestModal
-          food={food}
-          user={user}
-          closeModal={() => setShowModal(false)}
-        />
-      )}
+          {user && user.email !== donorEmail ? (
+            <button
+              onClick={() => setShowModal(true)}
+              className="btn btn-warning text-white"
+            >
+              Request This Food
+            </button>
+          ) : (
+            <p className="text-red-500 font-semibold">
+              You cannot request your own food.
+            </p>
+          )}
+          {showModal && (
+            <FoodRequestModal
+              food={food}
+              user={user}
+              closeModal={() => setShowModal(false)}
+            />
+          )}
         </div>
       </div>
     </div>
