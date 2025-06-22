@@ -10,6 +10,7 @@ import Register from "../pages/authentication-form/Register";
 import FoodRequest from "../pages/FoodRequest";
 import PrivateRoute from "./PrivateRoute";
 import axios from "axios";
+import UpdateFood from "../pages/UpdateFood";
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +41,11 @@ export const router = createBrowserRouter([
             <MyFoods></MyFoods>
           </PrivateRoute>
         ),
+      },
+      {
+        path:"update-food/:id",
+        loader: ({params}) => axios.get(`http://localhost:5000/foods/${params.id}`),
+        Component:UpdateFood
       },
       {
         path: "food-request",

@@ -39,9 +39,9 @@ const MyFoodList = ({ myFoodPromise }) => {
             <td>{req.status}</td>
             <td>{req.expiredDate}</td>
             <td className="flex items-center gap-2">
-              <button className="btn btn-sm bg-amber-200 text-black hover:bg-amber-300">
+              <Link to={`/update-food/${req._id}`} className="btn btn-sm bg-amber-200 text-black hover:bg-amber-300">
                 Update
-              </button>
+              </Link>
               <button className="btn btn-sm bg-red-500 text-white">
                 <RiDeleteBin5Fill />
               </button>
