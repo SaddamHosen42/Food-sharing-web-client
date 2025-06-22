@@ -1,25 +1,42 @@
-import React, { useEffect, useState } from "react";
+ import React from "react";
 import useAuth from "../hooks/useAuth";
 import MyFoodList from "../components/MyFoodList";
-import { myFoodPromise } from "../api/MyfoodApi";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { myFoodPromise } from "../api/MyfoodApi";
 
 const MyFoods = () => {
   const { user } = useAuth();
-  const [foods, setFoods] = useState([]);
-  useEffect(() => {
-    if (user?.email) {
-      myFoodPromise(user.email)
-        .then((data) => {
-          setFoods(data);
-        })
-        .catch((err) => {
-          console.error("Failed to load foods:", err);
-        });
-    }
-    document.title = "My Foods - FoodBridge";
-  }, [user?.email]);
+  const queryClient = useQueryClient();
+  const {
+    data: foods = [],
+    isLoading,
+    isError,
+  } = useQuery({
+    queryKey: ["myFoods", user?.email],
+    queryFn: () =>  myFoodPromise(user.email),
+    enabled: !!user?.email, // only run if email exists
+  });
+
+  //  Deleting with useMutation
+  const deleteMutation = useMutation({
+    mutationFn: (id) => axios.delete(`http://localhost:5000/foods/${id}`),
+    onSuccess: () => {
+      Swal.fire({
+        title: "Deleted!",
+        text: "Your food has been deleted.",
+        icon: "success",
+        timer: 1500,
+        showConfirmButton: false,
+      });
+      queryClient.invalidateQueries(["myFoods"]); //  refetch list
+    },
+    onError: () => {
+      Swal.fire("Error!", "Failed to delete the food.", "error");
+    },
+  });
+
   const handelDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -31,33 +48,14 @@ const MyFoods = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios
-          .delete(`http://localhost:5000/foods/${id}`)
-          .then((res) => {
-            if (res.data.deletedCount > 0) {
-              const remainingFoods = foods.filter((food) => food._id !== id);
-              setFoods(remainingFoods);
-
-              Swal.fire({
-                title: "Deleted!",
-                text: "Your food has been deleted.",
-                icon: "success",
-                timer: 1500,
-                showConfirmButton: false,
-              });
-            }
-          })
-          .catch((error) => {
-            console.error("Error deleting food:", error);
-            Swal.fire({
-              title: "Error!",
-              text: "Something went wrong while deleting the food.",
-              icon: "error",
-            });
-          });
+        deleteMutation.mutate(id);
       }
     });
   };
+
+  if (isLoading) return <p className="text-center">Loading...</p>;
+  if (isError) return <p className="text-center text-red-500">Failed to load foods.</p>;
+
   return (
     <div className="container mx-auto w-[90%] mt-25">
       <h2 className="text-2xl font-bold text-center mb-6 text-amber-500">
