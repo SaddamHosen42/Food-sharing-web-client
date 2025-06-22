@@ -1,10 +1,10 @@
-import React, { use } from "react";
+import React from "react";
 import { GoArrowLeft } from "react-icons/go";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { Link } from "react-router";
+import { Tooltip } from "react-tooltip";
 
-const MyFoodList = ({ myFoodPromise }) => {
-  const foods = use(myFoodPromise);
+const MyFoodList = ({ foods, handelDelete }) => {
   if (!foods || foods.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center ">
@@ -39,10 +39,21 @@ const MyFoodList = ({ myFoodPromise }) => {
             <td>{req.status}</td>
             <td>{req.expiredDate}</td>
             <td className="flex items-center gap-2">
-              <Link to={`/update-food/${req._id}`} className="btn btn-sm bg-amber-200 text-black hover:bg-amber-300">
+              <Link
+                to={`/update-food/${req._id}`}
+                className="btn btn-sm bg-amber-200 text-black hover:bg-amber-300"
+              >
                 Update
               </Link>
-              <button className="btn btn-sm bg-red-500 text-white">
+              <button
+                onClick={() => handelDelete(req._id)}
+                id="delete-btn"
+                className="btn btn-sm bg-red-500 text-white"
+              >
+                <Tooltip
+                  anchorSelect="#delete-btn"
+                  content="Delete food"
+                ></Tooltip>
                 <RiDeleteBin5Fill />
               </button>
             </td>
