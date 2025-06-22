@@ -72,7 +72,7 @@ const Login = () => {
   return (
     <div className="flex justify-center items-center min-h-[calc(100vh-100px)]  mb-10 mt-20">
       <div className="card bg-base-100 w-sm md:w-[500px] shrink-0 shadow-2xl mx-auto mt-10">
-        <h1 className="text-3xl font-bold text-center py-4 text-amber-500">Login Your Account</h1>
+        <h1 className="text-3xl font-bold text-center py-4 ">Login Your <span className="text-amber-400"> Account</span></h1>
         <div className="card-body px-8">
           {errorMessage && (
             <p className="text-red-500 text-center">{errorMessage}</p>
