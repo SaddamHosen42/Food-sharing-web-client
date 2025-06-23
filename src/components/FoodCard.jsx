@@ -17,10 +17,11 @@ const FoodCard = ({ food }) => {
         <p className="text-sm">Quantity: {quantity}</p>
         <p className="text-sm ">Pickup Location: {pickupLocation}</p>
 
-        <Link 
-         to={`/food-details/${food._id}`}
-        className="btn bg-amber-400 hover:bg-amber-500 text-white transition-all duration-300 ease-in-out hover:scale-105">
-            View Details
+        <Link
+          to={`/food-details/${food._id}`}
+          className="btn bg-amber-400 hover:bg-amber-500 text-white transition-all duration-300 ease-in-out hover:scale-105"
+        >
+          View Details
         </Link>
       </div>
     </div>

@@ -21,6 +21,8 @@ export const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
+        loader: () => axios.get("http://localhost:5000/featured-foods"),
+        hydrateFallbackElement: <Loading></Loading>,
       },
       {
         path: "available-foods",
