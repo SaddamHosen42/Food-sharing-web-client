@@ -54,7 +54,7 @@ const MissionSection = () => {
         <h2 className="text-3xl font-bold uppercase">
           Our Upcoming <span className="text-amber-500">Mission</span>
         </h2>
-        <p className="text-gray-600 mt-2 max-w-xl mx-auto">
+        <p className="mt-2 max-w-xl mx-auto">
           Together, we can bring positive change. Your small contribution can
           make a big difference in someone's life. Join us in spreading hope and
           compassion.
@@ -71,16 +71,16 @@ const MissionSection = () => {
           >
             {/* Icon on top center */}
             <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-              <div className="bg-amber-500 p-3 rounded">
+              <div className="bg-amber-400 p-3 rounded">
                 <span className="text-white">{item.icon}</span>
               </div>
             </div>
 
             <div className="mt-8">
-              <h3 className="text-lg font-semibold  mb-2 text-amber-600">
+              <h3 className="text-lg font-semibold  mb-2 text-amber-500">
                 {item.title}
               </h3>
-              <p className="text-gray-600 text-sm">{item.description}</p>
+              <p className=" text-sm">{item.description}</p>
             </div>
           </div>
         ))}

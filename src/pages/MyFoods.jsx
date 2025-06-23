@@ -15,7 +15,7 @@ const MyFoods = () => {
     isError,
   } = useQuery({
     queryKey: ["myFoods", user?.email],
-    queryFn: () =>  myFoodPromise(user.email),
+    queryFn: () =>  myFoodPromise(user.email,user.accessToken),
     enabled: !!user?.email, // only run if email exists
   });
 
