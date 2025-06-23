@@ -11,6 +11,7 @@ import FoodRequest from "../pages/FoodRequest";
 import PrivateRoute from "./PrivateRoute";
 import axios from "axios";
 import UpdateFood from "../pages/UpdateFood";
+import Loading from "../components/Loading";
 
 export const router = createBrowserRouter([
   {
@@ -24,7 +25,8 @@ export const router = createBrowserRouter([
       {
         path: "available-foods",
         Component: AvailableFoods,
-        loader:()=>axios.get("http://localhost:5000/available-foods")
+        loader:()=>axios.get("http://localhost:5000/available-foods"),
+        hydrateFallbackElement:<Loading></Loading>
       },
       {
         path: "add-food",
@@ -45,7 +47,8 @@ export const router = createBrowserRouter([
       {
         path:"update-food/:id",
         loader: ({params}) => axios.get(`http://localhost:5000/foods/${params.id}`),
-        Component:UpdateFood
+        Component:UpdateFood,
+        hydrateFallbackElement:<Loading></Loading>
       },
       {
         path: "food-request",
@@ -63,6 +66,7 @@ export const router = createBrowserRouter([
            <FoodDetails></FoodDetails>
           </PrivateRoute>
         ),
+        hydrateFallbackElement:<Loading></Loading>
       },
       {
         path: "login",

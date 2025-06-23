@@ -22,7 +22,7 @@ const FoodDetails = () => {
   } = food;
 
   return (
-    <div className="mt-25 container mx-auto w-[90%]">
+    <div className="mt-25 container mx-auto w-[90%] min-h-[calc(100vh-450px)]">
       <h1 className="text-4xl text-center font-bold text-amber-400 my-10">
         Food Details
       </h1>

@@ -39,7 +39,7 @@ const AddFoods = () => {
   };
 
   return (
-    <div className="container mx-auto w-[90%] mt-30 mb-10">
+    <div className="min-h-[calc(100vh-450px)] container mx-auto w-[90%] mt-30 mb-10">
       <h1 className="text-3xl font-bold text-center mb-6 text-amber-400">Add a New Food</h1>
       <form
         onSubmit={handleAddFood}
