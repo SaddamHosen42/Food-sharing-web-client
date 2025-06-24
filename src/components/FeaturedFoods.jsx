@@ -28,8 +28,9 @@ const FeaturedFoods = () => {
           reduce food waste and support those in need by donating or requesting
           these items.
         </p>
+         <div className="w-24 h-1 bg-amber-500 mx-auto mt-2" />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 mt-5">
         {foods.map((food) => (
           <FoodCard key={food._id} food={food}></FoodCard>
         ))}

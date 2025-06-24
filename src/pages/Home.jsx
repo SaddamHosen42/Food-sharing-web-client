@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Banner from '../components/Banner';
 import FeaturedFoods from '../components/FeaturedFoods';
 import MissionSection from '../components/MissionSection';
+import UserReviews from '../components/UserReviews';
 
 const Home = () => {
     useEffect(() => {
@@ -18,6 +19,9 @@ const Home = () => {
             </section>
             <section className='container mx-auto w-[90%] mt-30 mb-10 min-h-[calc(100vh-450px)]'>
                 <MissionSection></MissionSection>
+            </section>
+            <section>
+                <UserReviews></UserReviews>
             </section>
            </main>
         </div>
