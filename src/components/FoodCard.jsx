@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router";
-import { motion } from "motion/react";
+import { motion } from "motion/react"
 const FoodCard = ({ food }) => {
   const { name, image, quantity, pickupLocation } = food;
   return (

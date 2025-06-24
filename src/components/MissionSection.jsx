@@ -6,6 +6,7 @@ import {
   FaHome,
   FaTshirt,
 } from "react-icons/fa";
+import { motion } from "motion/react";
 import { FaBowlFood } from "react-icons/fa6";
 
 const missions = [
@@ -51,9 +52,15 @@ const MissionSection = () => {
   return (
     <section className="py-12">
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold uppercase">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 2, ease: "easeOut", type: "spring" }}
+          viewport={{ once: true }}
+          className="text-3xl font-bold uppercase"
+        >
           Our Upcoming <span className="text-amber-500">Mission</span>
-        </h2>
+        </motion.h2>
         <p className="mt-2 max-w-xl mx-auto">
           Together, we can bring positive change. Your small contribution can
           make a big difference in someone's life. Join us in spreading hope and
@@ -64,7 +71,11 @@ const MissionSection = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-4 max-w-6xl mx-auto">
         {missions.map((item, index) => (
-          <div
+          <motion.div
+            initial={{ scale: 0.5, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            viewport={{ once: true }}
             key={index}
             className="relative border border-amber-300 text-center p-6  bg-base-200 transition-transform duration-300 hover:-translate-y-3
 "
@@ -82,7 +93,7 @@ const MissionSection = () => {
               </h3>
               <p className=" text-sm">{item.description}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
