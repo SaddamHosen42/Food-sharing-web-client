@@ -51,7 +51,7 @@ const links = (
 );
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log("user", user);
+ // console.log("user", user);
   const handleLogOut = () => {
     Swal.fire({
       title: "Are you sure?",
