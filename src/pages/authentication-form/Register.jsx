@@ -3,7 +3,8 @@ import { AuthContext } from "../../provider/AuthProvider";
 import {Link, useLocation, useNavigate } from "react-router";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-
+import Lottie from "lottie-react";
+import registerAnimation from "../../lottie-animation/Animation-register.json";
 const Register = () => {
   useEffect(() => {
     document.title = "Register - FoodBridge";
@@ -80,6 +81,9 @@ const Register = () => {
   };
   return (
     <div className="flex justify-center  items-center  mb-10 mt-20 min-h-[calc(100vh-150px)]">
+     <div className=" hidden md:block">
+      <Lottie animationData={registerAnimation} loop={true}></Lottie>
+     </div>
       <div className="card bg-base-100 w-sm md:w-[500px]  shrink-0 shadow-2xl mx-auto mt-10">
         <h1 className="text-3xl font-bold text-center py-4">
           Create an <span className="text-amber-400"> Account</span>

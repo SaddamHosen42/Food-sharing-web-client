@@ -3,7 +3,8 @@ import { Link, useLocation, useNavigate } from "react-router";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../provider/AuthProvider";
-
+import Lottie from "lottie-react";
+import loginAnimation from "../../lottie-animation/Animation-login.json";
 const Login = () => {
   useEffect(() => {
     document.title = "Login - FoodBridge";
@@ -71,6 +72,9 @@ const Login = () => {
 
   return (
     <div className="flex justify-center items-center min-h-[calc(100vh-100px)]  mb-10 mt-20">
+      <div className=" hidden md:block">
+      <Lottie animationData={loginAnimation} loop={true}></Lottie>
+     </div>
       <div className="card bg-base-100 w-sm md:w-[500px] shrink-0 shadow-2xl mx-auto mt-10">
         <h1 className="text-3xl font-bold text-center py-4 ">Login Your <span className="text-amber-400"> Account</span></h1>
         <div className="card-body px-8">
