@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const Slider2 = () => {
   return (
@@ -22,7 +23,8 @@ const Slider2 = () => {
             “Your extra food can transform into hope—join our network to reduce
             waste and ensure everyone at the table is fed.”
           </p>
-          <button className="btn  border-amber-400 rounded-none bg-amber-400 text-white">Get Started</button>
+        <Link to="/add-food">
+          <button className="btn  border-amber-400 rounded-none bg-amber-400 text-white">Add Food</button></Link>
         </div>
       </div>
     </div>

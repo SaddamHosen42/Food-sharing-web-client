@@ -12,6 +12,7 @@ import PrivateRoute from "./PrivateRoute";
 import axios from "axios";
 import UpdateFood from "../pages/UpdateFood";
 import Loading from "../components/Loading";
+import ErrorPages from "../pages/ErrorPages";
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +46,7 @@ export const router = createBrowserRouter([
             <MyFoods></MyFoods>
           </PrivateRoute>
         ),
+        hydrateFallbackElement:<Loading></Loading>
       },
       {
         path:"update-food/:id",
@@ -78,6 +80,10 @@ export const router = createBrowserRouter([
         path: "register",
         Component: Register,
       },
+      {
+        path: "*",
+        Component:ErrorPages,
+      }
     ],
   },
 ]);
