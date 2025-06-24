@@ -61,7 +61,7 @@ const Footer = () => {
           </p>
         </div>
         <nav>
-          <h6 className="footer-title">Company</h6>
+          <h6 className="footer-title">Useful Links</h6>
           {links}
         </nav>
         <div>

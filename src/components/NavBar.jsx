@@ -51,7 +51,7 @@ const links = (
 );
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
- // console.log("user", user);
+  // console.log("user", user);
   const handleLogOut = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -110,24 +110,25 @@ const NavBar = () => {
             className="menu bg-base-100 menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             {links}
-            <div className="flex flex-col mt-2 gap-2 md:hidden">
-                 
-              <Link
-                to="/login"
-                className="btn btn-sm btn-outline border-yellow-500 text-yellow-500 hover:bg-yellow-600  hover:text-white rounded-none"
-              >
-                Login
-                <LuLogIn lg:size={20} />
-              </Link>
-            
-              <Link
-                to="/register"
-                className="btn btn-sm btn-outline border-yellow-500 text-yellow-500 hover:bg-yellow-600  hover:text-white rounded-none"
-              >
-                Register
-                <LuLogIn lg:size={20} />
-              </Link>
-            </div>
+            {!user && (
+              <div className="flex flex-col mt-2 gap-2 md:hidden">
+                <Link
+                  to="/login"
+                  className="btn btn-sm btn-outline border-yellow-500 text-yellow-500 hover:bg-yellow-600  hover:text-white rounded-none"
+                >
+                  Login
+                  <LuLogIn lg:size={20} />
+                </Link>
+
+                <Link
+                  to="/register"
+                  className="btn btn-sm btn-outline border-yellow-500 text-yellow-500 hover:bg-yellow-600  hover:text-white rounded-none"
+                >
+                  Register
+                  <LuLogIn lg:size={20} />
+                </Link>
+              </div>
+            )}
           </ul>
         </div>
         <Link to="/" className=" hidden md:flex gap-1 items-center">
@@ -187,7 +188,7 @@ const NavBar = () => {
             </button>
           </div>
         ) : (
-          <div className="items-center gap-3 hidden lg:flex ">
+          <div className="items-center gap-3 hidden md:flex ">
             <div>
               <Link
                 to="/login"
