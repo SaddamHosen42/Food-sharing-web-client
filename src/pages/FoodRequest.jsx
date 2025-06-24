@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import useAuth from "../hooks/useAuth";
 import FoodRequestList from "../components/FoodRequestList";
 import Loading from "../components/Loading";
@@ -7,6 +7,9 @@ import useFoodRequestApi from "../api/useFoodRequestApi";
 
 const FoodRequest = () => {
   const { user } = useAuth();
+  useEffect(() => {
+    document.title = "My Food Requests - FoodBridge";
+  }, []);
   const {foodRequestPromise} = useFoodRequestApi();
   return (
     <div className="container mx-auto w-[90%] mt-30 min-h-[calc(100vh-450px)]">

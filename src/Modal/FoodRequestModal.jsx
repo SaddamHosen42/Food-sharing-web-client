@@ -25,11 +25,11 @@ const FoodRequestModal = ({ food, user, closeModal }) => {
 
     try {
       const res1 = await axios.post(
-        "http://localhost:5000/food-request",
+        "https://food-sharing-web-server-tau.vercel.app/food-request",
         requestData
       );
       const res2 = await axios.patch(
-        `http://localhost:5000/update-status/${food._id}`,
+        `https://food-sharing-web-server-tau.vercel.app/update-status/${food._id}`,
         {
           status: "unavailable",
         }

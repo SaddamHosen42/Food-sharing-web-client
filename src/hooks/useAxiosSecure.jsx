@@ -4,7 +4,7 @@ import useAuth from './useAuth';
 import axios from 'axios';
 
 const instance=axios.create({
-    baseURL:'http://localhost:5000',
+    baseURL:'https://food-sharing-web-server-tau.vercel.app',
 
 })
 const useAxiosSecure = () => {
@@ -19,7 +19,7 @@ const useAxiosSecure = () => {
             return response;
         },
         (error) => {
-            if(error.status===401){
+            if(error.status===401 || error.status===403){
                 logOut()
                 .then(() => {
                     console.error("Unauthorized access - signing out");

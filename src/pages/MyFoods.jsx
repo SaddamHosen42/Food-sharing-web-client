@@ -1,4 +1,4 @@
- import React from "react";
+import React, { useEffect } from "react";
 import useAuth from "../hooks/useAuth";
 import MyFoodList from "../components/MyFoodList";
 import Swal from "sweetalert2";
@@ -6,10 +6,12 @@ import axios from "axios";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import useMyfoodApi from "../api/useMyfoodApi";
 
-
 const MyFoods = () => {
+  useEffect(() => {
+    document.title = "My Foods - FoodBridge";
+  }, []);
   const { user } = useAuth();
-const {myFoodPromise}=useMyfoodApi();
+  const { myFoodPromise } = useMyfoodApi();
   const queryClient = useQueryClient();
   const {
     data: foods = [],
@@ -17,13 +19,16 @@ const {myFoodPromise}=useMyfoodApi();
     isError,
   } = useQuery({
     queryKey: ["myFoods", user?.email],
-    queryFn: () =>  myFoodPromise(user.email,user.accessToken),
+    queryFn: () => myFoodPromise(user.email, user.accessToken),
     enabled: !!user?.email, // only run if email exists
   });
 
   //  Deleting with useMutation
   const deleteMutation = useMutation({
-    mutationFn: (id) => axios.delete(`http://localhost:5000/foods/${id}`),
+    mutationFn: (id) =>
+      axios.delete(
+        `https://food-sharing-web-server-tau.vercel.app/foods/${id}`
+      ),
     onSuccess: () => {
       Swal.fire({
         title: "Deleted!",
@@ -56,7 +61,8 @@ const {myFoodPromise}=useMyfoodApi();
   };
 
   if (isLoading) return <p className="text-center">Loading...</p>;
-  if (isError) return <p className="text-center text-red-500">Failed to load foods.</p>;
+  if (isError)
+    return <p className="text-center text-red-500">Failed to load foods.</p>;
 
   return (
     <div className="container mx-auto w-[90%] mt-25 min-h-[calc(100vh-450px)]">

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Banner from '../components/Banner';
 import FeaturedFoods from '../components/FeaturedFoods';
 import MissionSection from '../components/MissionSection';
 
 const Home = () => {
+    useEffect(() => {
+        document.title = "Home - FoodBridge";
+    }, []);
     return (
         <div className=''>
            <header>

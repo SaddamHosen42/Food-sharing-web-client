@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router";
 import useAuth from "../hooks/useAuth";
 import FoodRequestModal from "../Modal/FoodRequestModal";
 
 const FoodDetails = () => {
+  useEffect(() => {
+    document.title = "Food Details - FoodBridge";
+  }, []);
   const { user } = useAuth();
   const food = useLoaderData().data;
   const [showModal, setShowModal] = useState(false);

@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { useNavigate } from "react-router";
 
 const AddFoods = () => {
+  useEffect(() => {
+    document.title = "Add Foods - FoodBridge";
+  }, []);
   const { user } = useAuth();
   const navigate = useNavigate();
   const handleAddFood = (event) => {
@@ -14,7 +17,7 @@ const AddFoods = () => {
     const newFood = Object.fromEntries(formData.entries());
     console.log(newFood);
     //send data to the server
-    axios.post("http://localhost:5000/add-food", newFood)
+    axios.post("https://food-sharing-web-server-tau.vercel.app/add-food", newFood)
       .then((res) => {
         if (res.data.insertedId) {
           Swal.fire({

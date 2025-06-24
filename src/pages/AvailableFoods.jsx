@@ -1,19 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router";
 import FoodCard from "../components/FoodCard";
 
 const AvailableFoods = () => {
+  useEffect(() => {
+    document.title = "Available Foods - FoodBridge";
+  }, []);
   const foods = useLoaderData().data;
   const [isThreeColumn, setIsThreeColumn] = useState(true);
   const [searchText, setSearchText] = useState("");
   const [sortOrder, setSortOrder] = useState("asc");
 
-  // 🔍 Filter by food name
+  //  Filter by food name
   const filteredFoods = foods.filter((food) =>
     food.name.toLowerCase().includes(searchText.toLowerCase())
   );
 
-  // 🔃 Sort by expire date
+  //  Sort by expire date
   const sortedFoods = [...filteredFoods].sort((a, b) => {
     const dateA = new Date(a.expiredDate);
     const dateB = new Date(b.expiredDate);

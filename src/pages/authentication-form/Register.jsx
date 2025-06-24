@@ -1,10 +1,13 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import {Link, useLocation, useNavigate } from "react-router";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
+  useEffect(() => {
+    document.title = "Register - FoodBridge";
+  }, []);
   const { creatUser, setUser, logInWithGoogle, updateUser } =
     useContext(AuthContext);
   const location = useLocation();

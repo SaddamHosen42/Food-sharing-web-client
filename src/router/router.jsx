@@ -21,13 +21,13 @@ export const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
-        loader: () => axios.get("http://localhost:5000/featured-foods"),
+        loader: () => axios.get("https://food-sharing-web-server-tau.vercel.app/featured-foods"),
         hydrateFallbackElement: <Loading></Loading>,
       },
       {
         path: "available-foods",
         Component: AvailableFoods,
-        loader:()=>axios.get("http://localhost:5000/available-foods"),
+        loader:()=>axios.get("https://food-sharing-web-server-tau.vercel.app/available-foods"),
         hydrateFallbackElement:<Loading></Loading>
       },
       {
@@ -48,7 +48,7 @@ export const router = createBrowserRouter([
       },
       {
         path:"update-food/:id",
-        loader: ({params}) => axios.get(`http://localhost:5000/foods/${params.id}`),
+        loader: ({params}) => axios.get(`https://food-sharing-web-server-tau.vercel.app/foods/${params.id}`),
         Component:UpdateFood,
         hydrateFallbackElement:<Loading></Loading>
       },
@@ -62,7 +62,7 @@ export const router = createBrowserRouter([
       },
       {
         path:"food-details/:id",
-        loader: ({params}) => axios.get(`http://localhost:5000/foods/${params.id}`),
+        loader: ({params}) => axios.get(`https://food-sharing-web-server-tau.vercel.app/foods/${params.id}`),
         element: (
           <PrivateRoute>
            <FoodDetails></FoodDetails>
