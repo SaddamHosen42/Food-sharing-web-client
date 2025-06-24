@@ -1,24 +1,25 @@
 import React from "react";
+import { number } from "../randomNumber/RandomNumber";
 
 const testimonials = [
   {
     name: "Amina Rahman",
     role: "Nutritionist, Dhaka",
-    image: "https://randomuser.me/api/portraits/women/26.jpg",
+    image: `https://randomuser.me/api/portraits/women/${ number}.jpg`,
     feedback:
       "FoodBridge is a blessing. It helps food reach those who truly need it. I love being part of this mission!",
   },
   {
     name: "Tanvir Hasan",
     role: "Volunteer, Rangpur",
-    image: "https://randomuser.me/api/portraits/men/22.jpg",
+    image: `https://randomuser.me/api/portraits/men/${ number}.jpg`,
     feedback:
       "Being able to donate surplus food easily has made me more aware of food waste. Great initiative!",
   },
   {
     name: "Sadia Alam",
     role: "Student, Chittagong",
-    image: "https://randomuser.me/api/portraits/women/2.jpg",
+    image: `https://randomuser.me/api/portraits/women/${ number+1}.jpg`,
     feedback:
       "I received help when I needed it most. Thanks to FoodBridge for making food accessible with dignity.",
   },
@@ -42,7 +43,7 @@ const UserReviews = () => {
         {testimonials.map((user, index) => (
           <div
             key={index}
-            className="flex flex-col items-start border border-amber-300 p-6 bg-base-100 text-left"
+            className="flex flex-col items-start border border-amber-300 p-6 bg-base-100 text-left hover:shadow-xl transition-shadow duration-300"
           >
             <div className="flex items-center mb-4">
               <img
