@@ -72,6 +72,7 @@ const NavBar = () => {
               timer: 1500,
               showConfirmButton: false,
             });
+            window.location.reload();
           })
           .catch((error) => {
             console.log(error);
