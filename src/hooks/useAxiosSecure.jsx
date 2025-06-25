@@ -1,4 +1,3 @@
-
 import React from 'react';
 import useAuth from './useAuth';
 import axios from 'axios';
@@ -9,10 +8,14 @@ const instance=axios.create({
 })
 const useAxiosSecure = () => {
     const {user,logOut}=useAuth();
+
+    //console.log("User in useAxiosSecure:", user);
     instance.interceptors.request.use((config) => {
         config.headers.Authorization= `Bearer ${user?.accessToken}`;
         return config;
     });
+
+   
     // Add a response interceptor
     instance.interceptors.response.use(
         (response) => {

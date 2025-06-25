@@ -11,6 +11,7 @@ const MyFoods = () => {
     document.title = "My Foods - FoodBridge";
   }, []);
   const { user } = useAuth();
+
   const { myFoodPromise } = useMyfoodApi();
   const queryClient = useQueryClient();
   const {
@@ -19,7 +20,7 @@ const MyFoods = () => {
     isError,
   } = useQuery({
     queryKey: ["myFoods", user?.email],
-    queryFn: () => myFoodPromise(user.email, user.accessToken),
+    queryFn: () => myFoodPromise(user.email),
     enabled: !!user?.email, // only run if email exists
   });
 

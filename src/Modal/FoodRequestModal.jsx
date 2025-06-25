@@ -35,7 +35,7 @@ const FoodRequestModal = ({ food, user, closeModal }) => {
         }
       );
 
-      if (res1.data.insertedId && res2.data.modifiedCount > 0) {
+      if (res1?.data.insertedId && res2?.data.modifiedCount > 0) {
         Swal.fire({
           icon: "success",
           title: "Food Request Submitted!",
