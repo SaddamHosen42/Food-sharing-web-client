@@ -22,6 +22,9 @@ const UpdateFood = () => {
     axios
       .put(`https://food-sharing-web-server-tau.vercel.app/foods/${food._id}`, updatedFood)
       .then((res) => {
+        if (!res){
+        return
+        }
         if (res.data.modifiedCount > 0) {
           Swal.fire({
             icon: "success",
