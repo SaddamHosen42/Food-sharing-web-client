@@ -25,7 +25,7 @@ const AvailableFoods = () => {
 
   return (
     <div className="mt-30 container mx-auto max-w-[90%] min-h-[calc(100vh-450px)]">
-      <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
         <h1 className="text-3xl font-bold text-primary-custom">Available Foods</h1>
 
         {/*  Search Input */}
@@ -77,7 +77,7 @@ const AvailableFoods = () => {
       {/*  Render Sorted and Filtered Foods */}
       {sortedFoods.length > 0 ? (
         <div
-          className={`grid grid-cols-1 md:grid-cols-2 ${
+          className={`container mx-auto grid grid-cols-1 md:grid-cols-2 ${
             isThreeColumn ? "lg:grid-cols-4" : "lg:grid-cols-3"
           } gap-4`}
         >

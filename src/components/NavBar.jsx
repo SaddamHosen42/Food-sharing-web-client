@@ -181,7 +181,7 @@ const NavBar = () => {
           </div>
 
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal text-lg space-x-2">
+            <ul className="menu menu-horizontal  space-x-2">
               {/* Show different navigation based on auth status */}
               {user ? (
                 <>
