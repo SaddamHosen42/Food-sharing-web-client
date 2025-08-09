@@ -11,8 +11,8 @@ const publicLinks = (
       to="/"
       className={({ isActive }) =>
         isActive
-          ? "text-primary-custom underline underline-offset-4 decoration-2 border-primary-custom transition-all duration-300 px-3 py-2"
-          : "text-base-content hover:text-primary-custom transition-all duration-300 font-medium hover:scale-105 transform px-3 py-2 rounded-lg"
+          ? "text-primary-custom underline underline-offset-4  px-3 py-2"
+          : "text-base-content hover:text-primary-custom hover:scale-105 transform px-3 py-2"
       }
     >
       Home
@@ -21,18 +21,18 @@ const publicLinks = (
       to="/available-foods"
       className={({ isActive }) =>
         isActive
-          ? "text-primary-custom underline underline-offset-4 decoration-2 border-primary-custom transition-all duration-300 px-3 py-2"
-          : "text-base-content hover:text-primary-custom transition-all duration-300 font-medium hover:scale-105 transform px-3 py-2 rounded-lg"
+          ? "text-primary-custom underline underline-offset-4  px-3 py-2"
+          : "text-base-content hover:text-primary-custom hover:scale-105 transform px-3 py-2"
       }
     >
       Available Foods
     </NavLink>
     <NavLink
       to="/about"
-      className={({ isActive }) =>
+       className={({ isActive }) =>
         isActive
-          ? "text-primary-custom underline underline-offset-4 decoration-2 border-primary-custom transition-all duration-300 px-3 py-2"
-          : "text-base-content hover:text-primary-custom transition-all duration-300 font-medium hover:scale-105 transform px-3 py-2 rounded-lg"
+          ? "text-primary-custom underline underline-offset-4  px-3 py-2"
+          : "text-base-content hover:text-primary-custom hover:scale-105 transform px-3 py-2"
       }
     >
       About Us
@@ -44,10 +44,10 @@ const protectedLinks = (
   <>
     <NavLink
       to="/add-food"
-      className={({ isActive }) =>
+       className={({ isActive }) =>
         isActive
-          ? "text-primary-custom underline underline-offset-4 decoration-2 border-primary-custom transition-all duration-300 px-3 py-2"
-          : "text-base-content hover:text-primary-custom transition-all duration-300 font-medium hover:scale-105 transform px-3 py-2 rounded-lg"
+          ? "text-primary-custom underline underline-offset-4  px-3 py-2"
+          : "text-base-content hover:text-primary-custom hover:scale-105 transform px-3 py-2"
       }
     >
       Add Food
@@ -56,18 +56,18 @@ const protectedLinks = (
       to="/my-foods"
       className={({ isActive }) =>
         isActive
-          ? "text-primary-custom underline underline-offset-4 decoration-2 border-primary-custom transition-all duration-300 px-3 py-2"
-          : "text-base-content hover:text-primary-custom transition-all duration-300 font-medium hover:scale-105 transform px-3 py-2 rounded-lg"
+          ? "text-primary-custom underline underline-offset-4  px-3 py-2"
+          : "text-base-content hover:text-primary-custom hover:scale-105 transform px-3 py-2"
       }
     >
       My Foods
     </NavLink>
     <NavLink
       to="/food-request"
-      className={({ isActive }) =>
+     className={({ isActive }) =>
         isActive
-          ? "text-primary-custom underline underline-offset-4 decoration-2 border-primary-custom transition-all duration-300 px-3 py-2"
-          : "text-base-content hover:text-primary-custom transition-all duration-300 font-medium hover:scale-105 transform px-3 py-2 rounded-lg"
+          ? "text-primary-custom underline underline-offset-4  px-3 py-2"
+          : "text-base-content hover:text-primary-custom hover:scale-105 transform px-3 py-2"
       }
     >
       Food Request
@@ -112,7 +112,7 @@ const NavBar = () => {
     });
   };
   return (
-    <div className="w-full bg-gradient-to-r from-secondary-custom/20 via-secondary-custom/30 to-secondary-custom/20 shadow-xl fixed top-0 z-10 backdrop-blur-lg">
+    <div className="w-full bg-base-200 shadow-xl fixed top-0 z-10 backdrop-blur-lg">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="navbar justify-between py-3">
           <div className="navbar-start items-center">
@@ -140,7 +140,7 @@ const NavBar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="menu bg-base-100/95 backdrop-blur-lg menu-sm dropdown-content rounded-2xl z-[100] mt-3 w-64 p-4 shadow-2xl border border-secondary-custom/30"
+                className="menu bg-base-100/95 backdrop-blur-lg menu-sm dropdown-content rounded-2xl z-[100] mt-3 w-64 p-4 shadow-2xl "
               >
                 {/* Show all links (public + protected) for mobile based on auth status */}
                 {user ? (
@@ -155,7 +155,7 @@ const NavBar = () => {
                   <div className="flex flex-col mt-4 gap-3 md:hidden border-t border-secondary-custom/30 pt-4">
                     <Link
                       to="/login"
-                      className="btn btn-sm bg-primary-custom hover:bg-primary-custom text-black rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
+                      className="btn btn-sm bg-primary-custom  hover:text-black rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
                     >
                       Login
                       <LuLogIn size={18} />
@@ -181,7 +181,7 @@ const NavBar = () => {
           </div>
 
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal text-lg space-x-2 font-medium">
+            <ul className="menu menu-horizontal text-lg space-x-2">
               {/* Show different navigation based on auth status */}
               {user ? (
                 <>
@@ -202,9 +202,9 @@ const NavBar = () => {
                   <div
                     tabIndex={0}
                     role="button"
-                    className="btn btn-ghost btn-circle avatar hover:bg-primary-custom/20 hover:scale-105 transition-all duration-300"
+                    className="btn btn-ghost btn-circle avatar hover:scale-105 transition-all duration-300"
                   >
-                    <div className="relative group inline-block w-12 rounded-full ring-2 ring-primary-custom ring-offset-2 ring-offset-base-100 overflow-hidden hover:ring-secondary-custom hover:ring-2 transition-all duration-300 shadow-lg">
+                    <div className="relative group inline-block w-12 rounded-full ring-2 ring-offset-2 ring-offset-green-100 overflow-hidden hover:ring-2 transition-all duration-300 shadow-lg">
                       <img
                         className="w-full h-full object-cover"
                         alt="User Avatar"
@@ -246,7 +246,7 @@ const NavBar = () => {
                 <div>
                   <Link
                     to="/login"
-                    className="btn btn-sm lg:btn-md btn-outline border-primary-custom text-primary-custom hover:bg-primary-custom hover:text-black rounded-full hover:scale-105 transition-all duration-300 transform shadow-lg hover:shadow-xl"
+                    className="btn btn-sm lg:btn-md btn-outline border-primary-custom  hover:bg-primary-custom hover:text-black rounded-full hover:scale-105 transition-all duration-300 transform shadow-lg hover:shadow-xl"
                   >
                     Login
                     <LuLogIn size={18} />
