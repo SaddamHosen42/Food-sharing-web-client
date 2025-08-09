@@ -45,7 +45,7 @@ const UpdateFood = () => {
       });
   };
   return (
-    <div className="container mx-auto w-[90%] mt-30 mb-10 min-h-[calc(100vh-450px)]">
+    <div className="container mx-auto max-w-[90%] mt-30 mb-10 min-h-[calc(100vh-450px)]">
       <h1 className="text-3xl font-bold text-center mb-6">
         Update Food Information
         <span className="text-primary-custom"> {food.name}</span>

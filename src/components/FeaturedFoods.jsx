@@ -29,7 +29,7 @@ const FeaturedFoods = () => {
         </p>
         <div className="w-24 h-1 bg-primary-custom mx-auto mt-2" />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 mt-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 mt-8">
         {foods.map((food) => (
           <FoodCard key={food._id} food={food}></FoodCard>
         ))}

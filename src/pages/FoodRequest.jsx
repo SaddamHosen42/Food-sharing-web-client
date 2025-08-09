@@ -12,7 +12,7 @@ const FoodRequest = () => {
   }, []);
   const {foodRequestPromise} = useFoodRequestApi();
   return (
-    <div className="container mx-auto w-[90%] mt-30 min-h-[calc(100vh-450px)]">
+    <div className="container mx-auto max-w-[90%] mt-30 min-h-[calc(100vh-450px)]">
       <h2 className="text-2xl font-bold text-center mb-6 text-primary-custom">
         My Food Requests
       </h2>

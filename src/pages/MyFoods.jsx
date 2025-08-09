@@ -66,7 +66,7 @@ const MyFoods = () => {
     return <p className="text-center text-red-500">Failed to load foods.</p>;
 
   return (
-    <div className="container mx-auto w-[90%] mt-25 min-h-[calc(100vh-450px)]">
+    <div className="container mx-auto max-w-[90%] mt-25 min-h-[calc(100vh-450px)]">
       <h2 className="text-2xl font-bold text-center mb-6 text-primary-custom">
         My Foods
       </h2>
