@@ -14,13 +14,13 @@ const Home = () => {
             <Banner></Banner>
            </header>
            <main>
-            <section className='container mx-auto max-w-[90%] mt-30 min-h-[calc(100vh-450px)]'>
+            <section className='container mx-auto  mt-30 '>
                 <FeaturedFoods></FeaturedFoods>
             </section>
-            <section className='container mx-auto max-w-[90%] mt-30 mb-10 min-h-[calc(100vh-450px)]'>
+            <section className='container mx-auto mt-30 mb-10'>
                 <MissionSection></MissionSection>
             </section>
-            <section>
+            <section className='container mx-auto mt-30 mb-10'>
                 <UserReviews></UserReviews>
             </section>
            </main>
