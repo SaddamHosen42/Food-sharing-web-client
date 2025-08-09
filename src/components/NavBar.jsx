@@ -174,11 +174,7 @@ const NavBar = () => {
             </div>
             <Link to="/" className="hidden md:flex gap-2 items-center group">
               <div className="relative">
-                <img
-                  src="https://i.ibb.co/8DwFHD4r/Food-logo-removebg.png"
-                  className="w-56 h-14 transition-transform duration-300 group-hover:scale-105"
-                  alt="FoodBridge Logo"
-                />
+                <span className="text-2xl font-bold text-primary-custom ">FoodBridge</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-custom/20 to-secondary-custom/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </Link>

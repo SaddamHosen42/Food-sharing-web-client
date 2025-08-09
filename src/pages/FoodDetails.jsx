@@ -11,7 +11,7 @@ const FoodDetails = () => {
   const { user } = useAuth();
   const food = useLoaderData().data;
   const [showModal, setShowModal] = useState(false);
-  
+
   const {
     name,
     image,
@@ -28,7 +28,6 @@ const FoodDetails = () => {
   return (
     <div className="min-h-[calc(100vh-200px)] py-12">
       <div className="mx-auto w-[90%]">
-        
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-primary-custom mb-4">
@@ -55,11 +54,13 @@ const FoodDetails = () => {
                   <span className="bg-white/90 text-gray-900 px-4 py-2 rounded-full font-semibold">
                     Qty: {quantity}
                   </span>
-                  <span className={`px-4 py-2 rounded-full font-semibold ${
-                    status === 'available' 
-                      ? 'bg-green-500 text-white' 
-                      : 'bg-orange-500 text-white'
-                  }`}>
+                  <span
+                    className={`px-4 py-2 rounded-full font-semibold ${
+                      status === "available"
+                        ? "bg-green-500 text-white"
+                        : "bg-orange-500 text-white"
+                    }`}
+                  >
                     {status}
                   </span>
                 </div>
@@ -146,9 +147,7 @@ const FoodDetails = () => {
                 <p className="text-primary-custom font-semibold text-lg mb-1">
                   Verified Food Donor
                 </p>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {donorEmail}
-                </p>
+                <p className="text-gray-600 dark:text-gray-400">{donorEmail}</p>
               </div>
             </div>
           </div>

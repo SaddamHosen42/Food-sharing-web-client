@@ -27,7 +27,7 @@ const testimonials = [
 
 const UserReviews = () => {
   return (
-    <section className="py-12 bg-base-200">
+    <section className=" py-12 max-w-[90%] mx-auto">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold uppercase">
           What <span className="text-primary-custom">Users Say</span>
@@ -39,7 +39,7 @@ const UserReviews = () => {
         <div className="w-24 h-1 bg-primary-custom mx-auto mt-2" />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-4 max-w-[90%] mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-4 container mx-auto">
         {testimonials.map((user, index) => (
           <div
             key={index}

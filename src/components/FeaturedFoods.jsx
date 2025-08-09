@@ -11,6 +11,7 @@ const FeaturedFoods = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 2, ease: "easeOut", type: "spring" }}
       viewport={{ once: true }}
+      className="max-w-[90%] mx-auto"
     >
       <div className="flex flex-col items-center justify-center text-center">
         <motion.h2
@@ -29,7 +30,7 @@ const FeaturedFoods = () => {
         </p>
         <div className="w-24 h-1 bg-primary-custom mx-auto mt-2" />
       </div>
-      <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 mt-8 max-w-[90%] mx-auto">
+      <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 mt-8 ">
         {foods.map((food) => (
           <FoodCard key={food._id} food={food}></FoodCard>
         ))}

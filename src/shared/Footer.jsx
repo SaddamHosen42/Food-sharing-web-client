@@ -21,40 +21,21 @@ const links = (
       Available Foods
     </NavLink>
     <NavLink
-      to="/add-food"
+      to="/about"
       className={({ isActive }) =>
-        isActive ? " underline  text-primary-custom" : ""
+        isActive ? " underline text-primary-custom" : ""
       }
     >
-      Add Food
-    </NavLink>
-    <NavLink
-      to="/my-foods"
-      className={({ isActive }) =>
-        isActive ? " underline  text-primary-custom" : ""
-      }
-    >
-      Manage My Foods
-    </NavLink>
-    <NavLink
-      to="/food-request"
-      className={({ isActive }) =>
-        isActive ? " underline  text-primary-custom" : ""
-      }
-    >
-      My Food Request
+      About Us
     </NavLink>
   </>
 );
 const Footer = () => {
   return (
-    <div className="mt-20 ">
-      <footer className="footer sm:footer-horizontal bg-gray-800 text-neutral-content p-10">
+    <div className="mt-20 bg-gray-800 ">
+      <footer className="footer sm:footer-horizontal text-neutral-content p-10 container max-w-8xl mx-auto">
         <div className="max-w-xs">
-          <img
-            src="https://i.ibb.co/8DwFHD4r/Food-logo-removebg.png"
-            className="w-60 h-15"
-          />
+          <span className="text-2xl font-bold text-primary-custom">FoodBridge</span>
           <p>
             FoodBridge connects surplus food with people in need — reducing
             waste, spreading hope.
@@ -79,7 +60,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <footer className="text-center py-6 bg-primary-custom text-black text-sm">
+      <footer className="text-center py-6 bg-accent-custom text-black text-sm">
         © {new Date().getFullYear()} FoodBridge. All rights reserved.
       </footer>
     </div>
