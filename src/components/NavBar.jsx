@@ -86,9 +86,10 @@ const NavBar = () => {
     });
   };
   return (
-    <div className="navbar justify-between  shadow-lg px-8 fixed top-0 z-10 w-full bg-base-100">
-      <div className=" navbar-start items-center">
-        <div className="dropdown">
+    <div className="w-full bg-base-100 shadow-lg fixed top-0 z-10">
+      <div className="navbar justify-between px-4 md:px-8 max-w-full">
+        <div className=" navbar-start items-center">
+          <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -210,6 +211,7 @@ const NavBar = () => {
             </div>
           </div>
         )}
+      </div>
       </div>
     </div>
   );
