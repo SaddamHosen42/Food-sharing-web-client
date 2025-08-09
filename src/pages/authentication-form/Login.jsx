@@ -76,7 +76,7 @@ const Login = () => {
       <Lottie animationData={loginAnimation} loop={true}></Lottie>
      </div>
       <div className="card bg-base-100 w-sm md:w-[500px] shrink-0 shadow-2xl mx-auto mt-10">
-        <h1 className="text-3xl font-bold text-center py-4 ">Login Your <span className="text-amber-400"> Account</span></h1>
+        <h1 className="text-3xl font-bold text-center py-4 ">Login Your <span className="text-primary-custom"> Account</span></h1>
         <div className="card-body px-8">
           {errorMessage && (
             <p className="text-red-500 text-center">{errorMessage}</p>
@@ -108,12 +108,12 @@ const Login = () => {
               </button>
             </div>
 
-            <button className="btn bg-amber-400 hover:bg-amber-500 text-white mt-4 text-lg">Login</button>
+            <button className="btn bg-primary-custom hover:bg-primary-custom text-black mt-4 text-lg">Login</button>
             <div className="mt-4 text-center text-lg">
               <p>
                 Don't have an account?{" "}
                 <span>
-                  <Link to="/register" className="text-amber-400">
+                  <Link to="/register" className="text-primary-custom">
                     Register
                   </Link>
                 </span>
@@ -122,7 +122,7 @@ const Login = () => {
             <div className="divider text-lg">OR</div>
             <button
               onClick={handleGoogleSignIn}
-              className="btn  border-amber-500 text-lg bg-amber-400 hover:bg-amber-500"
+              className="btn border-primary-custom text-lg bg-primary-custom hover:bg-primary-custom text-black"
             >
               <svg
                 aria-label="Google logo"

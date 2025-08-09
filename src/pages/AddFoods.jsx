@@ -43,7 +43,7 @@ const AddFoods = () => {
 
   return (
     <div className="min-h-[calc(100vh-450px)] container mx-auto w-[90%] mt-30 mb-10">
-      <h1 className="text-3xl font-bold text-center mb-6 text-amber-400">Add a New Food</h1>
+      <h1 className="text-3xl font-bold text-center mb-6 text-primary-custom">Add a New Food</h1>
       <form
         onSubmit={handleAddFood}
         className="grid grid-cols-1 lg:grid-cols-2 gap-6  p-8 rounded-2xl shadow-xl w-full bg-base-200"
@@ -179,7 +179,7 @@ const AddFoods = () => {
         <div className="lg:col-span-2 text-center">
           <button
             type="submit"
-            className="btn  bg-amber-400 hover:bg-amber-500 text-white w-full lg:w-1/2"
+            className="btn bg-primary-custom hover:bg-primary-custom text-black w-full lg:w-1/2"
           >
             Add Food
           </button>

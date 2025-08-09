@@ -48,7 +48,7 @@ const UpdateFood = () => {
     <div className="container mx-auto w-[90%] mt-30 mb-10 min-h-[calc(100vh-450px)]">
       <h1 className="text-3xl font-bold text-center mb-6">
         Update Food Information
-        <span className="text-amber-500"> {food.name}</span>
+        <span className="text-primary-custom"> {food.name}</span>
       </h1>
       <form
         onSubmit={handleUpdateFood}
@@ -191,7 +191,7 @@ const UpdateFood = () => {
         <div className="lg:col-span-2 text-center">
           <button
             type="submit"
-            className="btn  bg-amber-400 hover:bg-amber-500 text-white w-full lg:w-1/2"
+            className="btn bg-primary-custom hover:bg-primary-custom text-black w-full lg:w-1/2"
           >
             Update Food
           </button>

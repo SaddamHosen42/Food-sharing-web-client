@@ -86,7 +86,7 @@ const Register = () => {
      </div>
       <div className="card bg-base-100 w-sm md:w-[500px]  shrink-0 shadow-2xl mx-auto mt-10">
         <h1 className="text-3xl font-bold text-center py-4">
-          Create an <span className="text-amber-400"> Account</span>
+          Create an <span className="text-primary-custom"> Account</span>
         </h1>
         <div className="card-body px-8">
           {errorMessage && (
@@ -139,7 +139,7 @@ const Register = () => {
 
             <button
               type="submit"
-              className="btn bg-amber-400 text-white hover:bg-amber-500 mt-4 text-lg"
+              className="btn bg-primary-custom text-black hover:bg-primary-custom mt-4 text-lg"
             >
               Register
             </button>
@@ -147,7 +147,7 @@ const Register = () => {
               <p>
                 Allreday have an account?{" "}
                 <span>
-                  <Link to="/login" className="text-amber-400 ">
+                  <Link to="/login" className="text-primary-custom ">
                     Login
                   </Link>
                 </span>
@@ -156,7 +156,7 @@ const Register = () => {
             <div className="divider text-lg">OR</div>
             <button
               onClick={handleGoogleSignIn}
-              className="btn border-amber-500 text-lg bg-amber-400 hover:bg-amber-500"
+              className="btn border-primary-custom text-lg bg-primary-custom hover:bg-primary-custom text-black"
             >
               <svg
                 aria-label="Google logo"

@@ -20,7 +20,7 @@ function ThemeToggle() {
 
   return (
     <div className="tooltip tooltip-bottom" data-tip="Toggle Theme">
-      <label className="swap swap-rotate cursor-pointer btn btn-ghost btn-circle hover:bg-amber-100 dark:hover:bg-amber-800/30 transition-all duration-300">
+      <label className="swap swap-rotate cursor-pointer btn btn-ghost btn-circle hover:bg-primary-custom/20 transition-all duration-300">
         {/* hidden checkbox controls the theme */}
         <input
           type="checkbox"
@@ -31,7 +31,7 @@ function ThemeToggle() {
 
           {/* sun icon */}
     <svg
-      className="swap-on h-7 w-7 text-amber-500 hover:text-amber-600 transition-colors duration-300"
+      className="swap-on h-7 w-7 text-primary-custom hover:text-primary-custom/80 transition-colors duration-300"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor">
@@ -41,7 +41,7 @@ function ThemeToggle() {
 
   {/* moon icon */}
   <svg
-    className="swap-off h-7 w-7 text-amber-500 hover:text-amber-600 transition-colors duration-300"
+    className="swap-off h-7 w-7 text-primary-custom hover:text-primary-custom/80 transition-colors duration-300"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     fill="currentColor">

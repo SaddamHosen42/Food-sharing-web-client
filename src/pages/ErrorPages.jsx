@@ -5,7 +5,7 @@ import { NavLink } from "react-router";
 const ErrorPages = () => {
   return (
     <div className="relative flex flex-col items-center mt-20">
-      <p className="text-5xl font-semibold text-amber-500 mt-8 mb-2">404</p>
+      <p className="text-5xl font-semibold text-primary-custom mt-8 mb-2">404</p>
 
       <div className="relative w-[500px] h-[400px]">
         <img
@@ -23,7 +23,7 @@ const ErrorPages = () => {
           Sorry, we couldn’t find the page you’re looking for.
         </p>
         <NavLink to="/">
-          <button className="btn bg-amber-400 text-lg"><FaArrowLeftLong />Go back home</button>
+          <button className="btn bg-primary-custom text-lg text-black"><FaArrowLeftLong />Go back home</button>
         </NavLink>
       </div>
     </div>

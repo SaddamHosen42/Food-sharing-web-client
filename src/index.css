@@ -1,2 +1,98 @@
-@import "tailwindcss";
-@plugin "daisyui";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Light Theme CSS Variables */
+:root {
+  --text: #021202;
+  --background: #f6fef6;
+  --primary: #29e723;
+  --secondary: #7af0e4;
+  --accent: #5bc5ec;
+}
+
+/* Dark Theme CSS Variables */
+[data-theme="dark"] {
+  --text: #edfded;
+  --background: #010901;
+  --primary: #1fdc18;
+  --secondary: #0f8579;
+  --accent: #137ea4;
+}
+
+/* Base styles using custom properties */
+body {
+  background-color: var(--background);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom utility classes */
+.text-custom {
+  color: var(--text);
+}
+
+.bg-custom {
+  background-color: var(--background);
+}
+
+.text-primary-custom {
+  color: var(--primary);
+}
+
+.bg-primary-custom {
+  background-color: var(--primary);
+}
+
+.text-secondary-custom {
+  color: var(--secondary);
+}
+
+.bg-secondary-custom {
+  background-color: var(--secondary);
+}
+
+.text-accent-custom {
+  color: var(--accent);
+}
+
+.bg-accent-custom {
+  background-color: var(--accent);
+}
+
+.border-primary-custom {
+  border-color: var(--primary);
+}
+
+.border-secondary-custom {
+  border-color: var(--secondary);
+}
+
+.border-accent-custom {
+  border-color: var(--accent);
+}
+
+/* Hover effects */
+.hover\:bg-primary-custom:hover {
+  background-color: var(--primary);
+}
+
+.hover\:bg-secondary-custom:hover {
+  background-color: var(--secondary);
+}
+
+.hover\:bg-accent-custom:hover {
+  background-color: var(--accent);
+}
+
+.hover\:text-primary-custom:hover {
+  color: var(--primary);
+}
+
+.hover\:text-secondary-custom:hover {
+  color: var(--secondary);
+}
+
+.hover\:text-accent-custom:hover {
+  color: var(--accent);
+}

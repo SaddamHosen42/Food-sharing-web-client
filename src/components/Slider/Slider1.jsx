@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "motion/react";
+import { motion } from "motion/react"; //eslint-disable-line
 import { Link } from "react-router";
 const Slider1 = () => {
   return (
@@ -23,14 +23,14 @@ const Slider1 = () => {
             }}
             className="mb-5 text-5xl font-bold"
           >
-            Zero Waste,<span className="text-yellow-500">Full Hearts</span>
+            Zero Waste,<span className="text-primary-custom">Full Hearts</span>
           </motion.h1>
           <p className="mb-5">
             “Redistribute perfectly good meals before they spoil—help us fight
             food waste and nourish communities, one plate at a time.”
           </p>
           <Link to="/available-foods">
-            <button className="btn  border-amber-400 rounded-none bg-amber-400 text-white">
+            <button className="btn  border-primary-custom rounded-none bg-primary-custom text-black">
               Get Started
             </button>
           </Link>

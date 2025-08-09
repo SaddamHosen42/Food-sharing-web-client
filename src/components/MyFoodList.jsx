@@ -13,7 +13,7 @@ const MyFoodList = ({ foods, handelDelete }) => {
         </p>
         <Link
           to="/add-food"
-          className="btn bg-amber-400 hover:bg-amber-500 text-white"
+          className="btn bg-primary-custom hover:bg-primary-custom text-black"
         >
           <GoArrowLeft size={20} /> Add Food
         </Link>
@@ -22,7 +22,7 @@ const MyFoodList = ({ foods, handelDelete }) => {
   }
   return (
     <table className="table table-zebra w-full border border-gray-300">
-      <thead className="bg-amber-200 text-amber-600">
+      <thead className="bg-secondary-custom/20 text-primary-custom">
         <tr>
           <th>#</th>
           <th>Food Name</th>
@@ -41,14 +41,14 @@ const MyFoodList = ({ foods, handelDelete }) => {
             <td className="flex items-center gap-2">
               <Link
                 to={`/update-food/${req._id}`}
-                className="btn btn-sm bg-amber-200 text-black hover:bg-amber-300"
+                className="btn btn-sm bg-secondary-custom/20 text-black hover:bg-secondary-custom/30"
               >
                 Update
               </Link>
               <button
                 onClick={() => handelDelete(req._id)}
                 id="delete-btn"
-                className="btn btn-sm bg-red-500 text-white"
+                className="btn btn-sm bg-red-500 text-black"
               >
                 <Tooltip
                   anchorSelect="#delete-btn"

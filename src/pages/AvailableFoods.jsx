@@ -26,7 +26,7 @@ const AvailableFoods = () => {
   return (
     <div className="mt-30 container mx-auto w-[90%] min-h-[calc(100vh-450px)]">
       <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
-        <h1 className="text-3xl font-bold text-amber-500">Available Foods</h1>
+        <h1 className="text-3xl font-bold text-primary-custom">Available Foods</h1>
 
         {/*  Search Input */}
         <label className="input input-bordered flex items-center gap-2">
@@ -68,7 +68,7 @@ const AvailableFoods = () => {
         {/* Layout Toggle Button */}
         <button
           onClick={() => setIsThreeColumn(!isThreeColumn)}
-          className="btn hidden lg:flex bg-amber-500 text-white rounded"
+          className="btn hidden lg:flex bg-primary-custom text-black rounded"
         >
           Change Layout
         </button>

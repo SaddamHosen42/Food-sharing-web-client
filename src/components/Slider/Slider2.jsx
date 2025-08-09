@@ -14,7 +14,7 @@ const Slider2 = () => {
       <div className="hero-content text-neutral-content text-center">
         <div className="max-w-md">
           <h3 className="mb-1 text-3xl font-bold">
-            Bridge <span className="text-amber-400">the Plate </span>
+            Bridge <span className="text-primary-custom">the Plate </span>
           </h3>
           <h1 className="text-5xl mb-5 font-bold">
             Bridge the Gap
@@ -24,7 +24,7 @@ const Slider2 = () => {
             waste and ensure everyone at the table is fed.”
           </p>
         <Link to="/add-food">
-          <button className="btn  border-amber-400 rounded-none bg-amber-400 text-white">Add Food</button></Link>
+          <button className="btn  border-primary-custom rounded-none bg-primary-custom text-black">Add Food</button></Link>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ const FoodRequestList = ({ foodRequestPromise }) => {
         <p className="text-center text-gray-500 mb-5">
           You have not requested any food yet. Please check the available foods.
         </p>
-        <Link to="/available-foods" className="btn bg-amber-400 hover:bg-amber-500 text-white">
+        <Link to="/available-foods" className="btn bg-primary-custom hover:bg-primary-custom text-black">
          <GoArrowLeft size={20}/> Go to Abailable Foods
         </Link>
       </div>
@@ -18,7 +18,7 @@ const FoodRequestList = ({ foodRequestPromise }) => {
   }
   return (
     <table className="table table-zebra w-full border border-gray-300">
-      <thead className="bg-amber-200 text-amber-600">
+      <thead className="bg-secondary-custom/20 text-primary-custom">
         <tr>
           <th>#</th>
           <th>Donor Name</th>

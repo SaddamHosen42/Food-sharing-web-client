@@ -7,7 +7,7 @@ const links = (
     <NavLink
       to="/"
       className={({ isActive }) =>
-        isActive ? " underline text-yellow-500" : ""
+        isActive ? " underline text-primary-custom" : ""
       }
     >
       Home
@@ -15,7 +15,7 @@ const links = (
     <NavLink
       to="/available-foods"
       className={({ isActive }) =>
-        isActive ? " underline text-yellow-500" : ""
+        isActive ? " underline text-primary-custom" : ""
       }
     >
       Available Foods
@@ -23,7 +23,7 @@ const links = (
     <NavLink
       to="/add-food"
       className={({ isActive }) =>
-        isActive ? " underline  text-yellow-500" : ""
+        isActive ? " underline  text-primary-custom" : ""
       }
     >
       Add Food
@@ -31,7 +31,7 @@ const links = (
     <NavLink
       to="/my-foods"
       className={({ isActive }) =>
-        isActive ? " underline  text-yellow-500" : ""
+        isActive ? " underline  text-primary-custom" : ""
       }
     >
       Manage My Foods
@@ -39,7 +39,7 @@ const links = (
     <NavLink
       to="/food-request"
       className={({ isActive }) =>
-        isActive ? " underline  text-yellow-500" : ""
+        isActive ? " underline  text-primary-custom" : ""
       }
     >
       My Food Request
@@ -79,7 +79,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <footer className="text-center py-6 bg-amber-500 text-white text-sm">
+      <footer className="text-center py-6 bg-primary-custom text-black text-sm">
         © {new Date().getFullYear()} FoodBridge. All rights reserved.
       </footer>
     </div>

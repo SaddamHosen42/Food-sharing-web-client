@@ -67,7 +67,7 @@ const MyFoods = () => {
 
   return (
     <div className="container mx-auto w-[90%] mt-25 min-h-[calc(100vh-450px)]">
-      <h2 className="text-2xl font-bold text-center mb-6 text-amber-500">
+      <h2 className="text-2xl font-bold text-center mb-6 text-primary-custom">
         My Foods
       </h2>
       <div className="overflow-x-auto">

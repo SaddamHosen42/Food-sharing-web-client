@@ -11,8 +11,8 @@ const publicLinks = (
       to="/"
       className={({ isActive }) =>
         isActive
-          ? "text-amber-500  underline underline-offset-4 decoration-2 decoration-amber-500 transition-all duration-300 px-3 py-2"
-          : "text-base-content hover:text-amber-500 transition-all duration-300 font-medium hover:scale-105 transform px-3 py-2 rounded-lg"
+          ? "text-primary-custom underline underline-offset-4 decoration-2 border-primary-custom transition-all duration-300 px-3 py-2"
+          : "text-base-content hover:text-primary-custom transition-all duration-300 font-medium hover:scale-105 transform px-3 py-2 rounded-lg"
       }
     >
       Home
@@ -21,8 +21,8 @@ const publicLinks = (
       to="/available-foods"
       className={({ isActive }) =>
         isActive
-          ? "text-amber-500 underline underline-offset-4 decoration-2 decoration-amber-500 transition-all duration-300 px-3 py-2"
-          : "text-base-content hover:text-amber-500 transition-all duration-300 font-medium hover:scale-105 transform px-3 py-2 rounded-lg"
+          ? "text-primary-custom underline underline-offset-4 decoration-2 border-primary-custom transition-all duration-300 px-3 py-2"
+          : "text-base-content hover:text-primary-custom transition-all duration-300 font-medium hover:scale-105 transform px-3 py-2 rounded-lg"
       }
     >
       Available Foods
@@ -31,8 +31,8 @@ const publicLinks = (
       to="/about"
       className={({ isActive }) =>
         isActive
-          ? "text-amber-500  underline underline-offset-4 decoration-2 decoration-amber-500 transition-all duration-300 px-3 py-2"
-          : "text-base-content hover:text-amber-500 transition-all duration-300 font-medium hover:scale-105 transform px-3 py-2 rounded-lg"
+          ? "text-primary-custom underline underline-offset-4 decoration-2 border-primary-custom transition-all duration-300 px-3 py-2"
+          : "text-base-content hover:text-primary-custom transition-all duration-300 font-medium hover:scale-105 transform px-3 py-2 rounded-lg"
       }
     >
       About Us
@@ -46,8 +46,8 @@ const protectedLinks = (
       to="/add-food"
       className={({ isActive }) =>
         isActive
-          ? "text-amber-500  underline underline-offset-4 decoration-2 decoration-amber-500 transition-all duration-300 px-3 py-2"
-          : "text-base-content hover:text-amber-500 transition-all duration-300 font-medium hover:scale-105 transform px-3 py-2 rounded-lg"
+          ? "text-primary-custom underline underline-offset-4 decoration-2 border-primary-custom transition-all duration-300 px-3 py-2"
+          : "text-base-content hover:text-primary-custom transition-all duration-300 font-medium hover:scale-105 transform px-3 py-2 rounded-lg"
       }
     >
       Add Food
@@ -56,21 +56,21 @@ const protectedLinks = (
       to="/my-foods"
       className={({ isActive }) =>
         isActive
-          ? "text-amber-500  underline underline-offset-4 decoration-2 decoration-amber-500 transition-all duration-300 px-3 py-2"
-          : "text-base-content hover:text-amber-500 transition-all duration-300 font-medium hover:scale-105 transform px-3 py-2 rounded-lg"
+          ? "text-primary-custom underline underline-offset-4 decoration-2 border-primary-custom transition-all duration-300 px-3 py-2"
+          : "text-base-content hover:text-primary-custom transition-all duration-300 font-medium hover:scale-105 transform px-3 py-2 rounded-lg"
       }
     >
-      Manage My Foods
+      My Foods
     </NavLink>
     <NavLink
       to="/food-request"
       className={({ isActive }) =>
         isActive
-          ? "text-amber-500 underline underline-offset-4 decoration-2 decoration-amber-500 transition-all duration-300 px-3 py-2"
-          : "text-base-content hover:text-amber-500 transition-all duration-300 font-medium hover:scale-105 transform px-3 py-2 rounded-lg"
+          ? "text-primary-custom underline underline-offset-4 decoration-2 border-primary-custom transition-all duration-300 px-3 py-2"
+          : "text-base-content hover:text-primary-custom transition-all duration-300 font-medium hover:scale-105 transform px-3 py-2 rounded-lg"
       }
     >
-      My Food Request
+      Food Request
     </NavLink>
   </>
 );
@@ -112,7 +112,7 @@ const NavBar = () => {
     });
   };
   return (
-    <div className="w-full bg-gradient-to-r from-amber-50 via-amber-100 to-amber-50 dark:from-amber-900/20 dark:via-amber-800/30 dark:to-amber-900/20  shadow-xl fixed top-0 z-10 backdrop-blur-lg">
+    <div className="w-full bg-gradient-to-r from-secondary-custom/20 via-secondary-custom/30 to-secondary-custom/20 shadow-xl fixed top-0 z-10 backdrop-blur-lg">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="navbar justify-between py-3">
           <div className="navbar-start items-center">
@@ -120,11 +120,11 @@ const NavBar = () => {
               <div
                 tabIndex={0}
                 role="button"
-                className="btn btn-ghost lg:hidden hover:bg-amber-100 dark:hover:bg-amber-800/30 transition-colors duration-200"
+                className="btn btn-ghost lg:hidden hover:bg-primary-custom/20 transition-colors duration-200"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-amber-600 dark:text-amber-400"
+                  className="h-6 w-6 text-primary-custom"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -140,7 +140,7 @@ const NavBar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="menu bg-base-100/95 backdrop-blur-lg menu-sm dropdown-content rounded-2xl z-[100] mt-3 w-64 p-4 shadow-2xl border border-amber-200 dark:border-amber-600"
+                className="menu bg-base-100/95 backdrop-blur-lg menu-sm dropdown-content rounded-2xl z-[100] mt-3 w-64 p-4 shadow-2xl border border-secondary-custom/30"
               >
                 {/* Show all links (public + protected) for mobile based on auth status */}
                 {user ? (
@@ -152,10 +152,10 @@ const NavBar = () => {
                   publicLinks
                 )}
                 {!user && (
-                  <div className="flex flex-col mt-4 gap-3 md:hidden border-t border-amber-200 dark:border-amber-600 pt-4">
+                  <div className="flex flex-col mt-4 gap-3 md:hidden border-t border-secondary-custom/30 pt-4">
                     <Link
                       to="/login"
-                      className="btn btn-sm bg-amber-500 hover:bg-amber-600 text-white rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
+                      className="btn btn-sm bg-primary-custom hover:bg-primary-custom text-black rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
                     >
                       Login
                       <LuLogIn size={18} />
@@ -163,7 +163,7 @@ const NavBar = () => {
 
                     <Link
                       to="/register"
-                      className="btn btn-sm btn-outline border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+                      className="btn btn-sm btn-outline border-primary-custom text-primary-custom hover:bg-primary-custom hover:text-black rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
                     >
                       Register
                       <LuLogIn size={18} />
@@ -179,7 +179,7 @@ const NavBar = () => {
                   className="w-56 h-14 transition-transform duration-300 group-hover:scale-105"
                   alt="FoodBridge Logo"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-custom/20 to-secondary-custom/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </Link>
           </div>
@@ -206,9 +206,9 @@ const NavBar = () => {
                   <div
                     tabIndex={0}
                     role="button"
-                    className="btn btn-ghost btn-circle avatar hover:bg-amber-100 dark:hover:bg-amber-800/30 hover:scale-105 transition-all duration-300"
+                    className="btn btn-ghost btn-circle avatar hover:bg-primary-custom/20 hover:scale-105 transition-all duration-300"
                   >
-                    <div className="relative group inline-block w-12 rounded-full ring-2 ring-amber-400 ring-offset-2 ring-offset-base-100 overflow-hidden hover:ring-amber-500 hover:ring-2 transition-all duration-300 shadow-lg">
+                    <div className="relative group inline-block w-12 rounded-full ring-2 ring-primary-custom ring-offset-2 ring-offset-base-100 overflow-hidden hover:ring-secondary-custom hover:ring-2 transition-all duration-300 shadow-lg">
                       <img
                         className="w-full h-full object-cover"
                         alt="User Avatar"
@@ -221,10 +221,10 @@ const NavBar = () => {
                   </div>
                   <ul
                     tabIndex={0}
-                    className="menu menu-sm dropdown-content bg-base-100/95 backdrop-blur-lg rounded-2xl z-[100] mt-3 w-72 p-5 shadow-2xl border border-amber-200 dark:border-amber-600 text-center"
+                    className="menu menu-sm dropdown-content bg-base-100/95 backdrop-blur-lg rounded-2xl z-[100] mt-3 w-72 p-5 shadow-2xl border border-secondary-custom/30 text-center"
                   >
                     <li className="mb-3 font-semibold">
-                      <p className=" text-amber-600 dark:text-amber-400 text-lg">
+                      <p className=" text-primary-custom text-lg">
                         {user.displayName}
                       </p>
                     </li>
@@ -235,7 +235,7 @@ const NavBar = () => {
                     </li>
                     <li>
                       <button
-                        className="btn btn-sm lg:btn-md btn-outline border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white rounded-full hover:scale-105 transition-all duration-300 transform shadow-lg hover:shadow-xl"
+                        className="btn btn-sm lg:btn-md btn-outline border-primary-custom text-primary-custom hover:bg-primary-custom hover:text-black rounded-full hover:scale-105 transition-all duration-300 transform shadow-lg hover:shadow-xl"
                         onClick={handleLogOut}
                       >
                         Logout
@@ -250,7 +250,7 @@ const NavBar = () => {
                 <div>
                   <Link
                     to="/login"
-                    className="btn btn-sm lg:btn-md btn-outline border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white rounded-full hover:scale-105 transition-all duration-300 transform shadow-lg hover:shadow-xl"
+                    className="btn btn-sm lg:btn-md btn-outline border-primary-custom text-primary-custom hover:bg-primary-custom hover:text-black rounded-full hover:scale-105 transition-all duration-300 transform shadow-lg hover:shadow-xl"
                   >
                     Login
                     <LuLogIn size={18} />
@@ -259,7 +259,7 @@ const NavBar = () => {
                 <div>
                   <Link
                     to="/register"
-                    className="btn btn-sm lg:btn-md bg-amber-500 hover:bg-amber-600 text-white rounded-full hover:scale-105 transition-all duration-300 transform shadow-lg hover:shadow-xl"
+                    className="btn btn-sm lg:btn-md bg-primary-custom hover:bg-primary-custom text-black rounded-full hover:scale-105 transition-all duration-300 transform shadow-lg hover:shadow-xl"
                   >
                     Register
                     <LuLogIn size={18} />

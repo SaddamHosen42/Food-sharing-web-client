@@ -13,14 +13,14 @@ const Slider3 = () => {
       <div className="hero-content text-neutral-content text-center">
         <div className="max-w-[600px]">
           <h1 className="mb-5 text-5xl font-bold">
-            Feeding Communities <span className="text-yellow-500">Together</span>
+            Feeding Communities <span className="text-primary-custom">Together</span>
           </h1>
           <p className="mb-5">
             “At FoodBridge, we connect excess meals from generous donors with
             families and individuals facing hunger, creating a more sustainable
             and caring world.”
           </p>
-           <button className="btn border-amber-400 rounded-none bg-amber-400 text-white">Get Started</button>
+           <button className="btn border-primary-custom rounded-none bg-primary-custom text-black">Get Started</button>
         </div>
       </div>
     </div>
