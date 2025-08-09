@@ -89,8 +89,8 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-base-100 via-secondary/10 to-base-100">
-      <div className="mx-auto px-4 py-16 w-[90%]">
+    <div className="min-h-screen bg-custom">
+      <div className="container mx-auto px-4 py-16 max-w-7xl">
         <div className="mx-auto">
           {/* Hero Section */}
           <motion.div 
@@ -104,7 +104,7 @@ const About = () => {
                 <span className="text-2xl">🍽️</span>
               </div>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent py-4">
+            <h1 className="text-5xl md:text-6xl font-bold py-4">
               About FoodBridge
             </h1>
             <p className="text-xl md:text-2xl text-base-content/70 leading-relaxed max-w-3xl mx-auto">
@@ -123,7 +123,7 @@ const About = () => {
             className="grid md:grid-cols-2 gap-8 mb-16"
           >
             {missionVisionData.map((item) => (
-              <div key={item.id} className="group bg-base-200 p-8 rounded-3xl shadow-lg border border-secondary-custom/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <div key={item.id} className="group bg-base-200 p-8 rounded-3xl shadow-lg  hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-custom to-secondary-custom rounded-xl flex items-center justify-center mr-4">
                     <span className="text-white text-xl">{item.icon}</span>
@@ -143,7 +143,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-secondary-custom/20 via-secondary-custom/30 to-secondary-custom/20 p-10 rounded-3xl mb-16 border border-secondary-custom/30"
+            className="bg-base-100 p-10 rounded-3xl mb-16 shadow-lg "
           >
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-primary-custom mb-4">How FoodBridge Works</h2>
@@ -153,8 +153,8 @@ const About = () => {
             <div className="grid md:grid-cols-4 gap-6">
               {stepsData.map((step) => (
                 <div key={step.id} className="text-center group">
-                  <div className="w-20 h-20 bg-gradient-to-br from-primary-custom to-secondary-custom rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-white text-2xl font-bold">{step.step}</span>
+                  <div className="w-20 h-20  rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className=" text-2xl font-bold border-2 border-primary-custom rounded-full p-3 w-15">{step.step}</span>
                   </div>
                   <h3 className="text-xl font-semibold text-primary-custom mb-2">{step.title}</h3>
                   <p className="text-base-content/70">{step.description}</p>
@@ -172,7 +172,7 @@ const About = () => {
             className="grid md:grid-cols-3 gap-8 mb-16"
           >
             {statisticsData.map((stat) => (
-              <div key={stat.id} className="text-center bg-base-200 p-8 rounded-3xl border border-secondary-custom/30 hover:shadow-lg transition-all duration-300">
+              <div key={stat.id} className="text-center bg-base-200 p-8 rounded-3xl  hover:shadow-xl transition-all duration-300 shadow-lg">
                 <div className="text-4xl font-bold text-primary-custom mb-2">{stat.number}</div>
                 <div className="text-lg font-semibold text-base-content mb-2">{stat.title}</div>
                 <div className="text-base-content/70">{stat.description}</div>
@@ -186,15 +186,15 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-secondary-custom/20 via-secondary-custom/30 to-secondary-custom/20 p-12 rounded-3xl text-center border border-secondary-custom/30 relative overflow-hidden"
+            className="bg-green-200 p-12 rounded-3xl text-center relative overflow-hidden"
           >
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-primary-custom/5 to-secondary-custom/5 pointer-events-none"></div>
-            <div className="relative z-10">
-              <div className="inline-block p-4 bg-secondary-custom/20 rounded-full mb-6">
+            
+            <div className="relative z-10 text-black">
+              <div className="inline-block p-4 bg-secondary-custom rounded-full mb-6 h-20">
                 <span className="text-4xl">🤝</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-primary-custom mb-6">Join Our Community</h2>
-              <p className="text-xl text-base-content/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+              <h2 className="text-4xl md:text-5xl font-bold  mb-6">Join Our Community</h2>
+              <p className="text-xl  mb-8 max-w-2xl mx-auto leading-relaxed">
                 Whether you have food to share or are looking for meals, 
                 FoodBridge welcomes everyone to be part of the solution. 
                 Start making a difference in your community today!
@@ -208,10 +208,10 @@ const About = () => {
                   <span className="mr-2">🍽️</span>
                   Start Sharing Food
                 </motion.button>
-                <motion.button 
+                <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="btn btn-outline border-primary-custom text-primary-custom hover:bg-primary-custom hover:text-black btn-lg rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 px-8"
+                  className="btn btn-outline border-primary-custom  hover:bg-primary-custom btn-lg rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 px-8"
                 >
                   <span className="mr-2">🔍</span>
                   Browse Available Food
@@ -229,7 +229,7 @@ const About = () => {
             className="mt-16 grid md:grid-cols-2 gap-8"
           >
             {additionalInfoData.map((info) => (
-              <div key={info.id} className="bg-base-200 p-8 rounded-3xl border border-secondary-custom/30">
+              <div key={info.id} className="bg-base-200 p-8 rounded-3xl shadow-lg">
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-custom to-secondary-custom rounded-xl flex items-center justify-center mr-4">
                     <span className="text-white text-xl">{info.icon}</span>
