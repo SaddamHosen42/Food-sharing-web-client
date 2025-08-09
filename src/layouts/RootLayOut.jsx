@@ -6,10 +6,12 @@ import Footer from "../shared/Footer";
 const RootLayOut = () => {
   return (
     <div>
-      <header>
+      <header className="fixed top-0 left-0 right-0 z-50">
         <NavBar></NavBar>
       </header>
-      <Outlet></Outlet>
+      <main className="pt-20"> 
+        <Outlet></Outlet>
+      </main>
       <footer>
         <Footer></Footer>
       </footer>

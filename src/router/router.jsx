@@ -8,6 +8,7 @@ import MyFoods from "../pages/MyFoods";
 import Login from "../pages/authentication-form/Login";
 import Register from "../pages/authentication-form/Register";
 import FoodRequest from "../pages/FoodRequest";
+import About from "../pages/About";
 import PrivateRoute from "./PrivateRoute";
 import axios from "axios";
 import UpdateFood from "../pages/UpdateFood";
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
         Component: AvailableFoods,
         loader:()=>axios.get("https://food-sharing-web-server-tau.vercel.app/available-foods"),
         hydrateFallbackElement:<Loading></Loading>
+      },
+      {
+        path: "about",
+        Component: About,
       },
       {
         path: "add-food",
