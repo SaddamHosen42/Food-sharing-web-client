@@ -27,7 +27,7 @@ const testimonials = [
 
 const UserReviews = () => {
   return (
-    <section className=" py-12 max-w-[90%] mx-auto">
+    <section className=" py-12 max-w-[90%] mx-auto ">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold uppercase">
           What <span className="text-primary-custom">Users Say</span>
@@ -43,7 +43,7 @@ const UserReviews = () => {
         {testimonials.map((user, index) => (
           <div
             key={index}
-            className="flex flex-col items-start border border-secondary-custom/30 p-6 bg-base-100 text-left hover:shadow-xl transition-shadow duration-300"
+            className="flex flex-col items-start  p-6 bg-secondary-custom text-left hover:shadow-xl transition-shadow duration-300"
           >
             <div className="flex items-center mb-4">
               <img
