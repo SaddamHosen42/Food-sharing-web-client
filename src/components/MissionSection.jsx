@@ -90,11 +90,11 @@ const MissionSection = () => {
             }}
             viewport={{ once: true }}
             key={index}
-            className="relative shadow-xl text-center p-6 bg-base-200 transition-all duration-300 rounded-2xl overflow-hidden group cursor-pointer border border-transparent hover:border-primary-custom/30"
+            className="relative shadow-xl text-center p-6 bg-base-200 transition-all duration-300 rounded-2xl overflow-hidden group cursor-pointer"
           >
             {/* Animated background gradient overlay */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-primary-custom/5 via-secondary-custom/5 to-accent-custom/5 opacity-0"
+              className="absolute inset-0  opacity-0"
               whileHover={{
                 opacity: 1,
                 transition: { duration: 0.3 }
@@ -234,7 +234,7 @@ const MissionSection = () => {
             
             {/* Corner decoration with animation */}
             <motion.div
-              className="absolute bottom-0 right-0 w-0 h-0 border-r-[30px] border-r-transparent border-b-[30px] border-b-primary-custom/20"
+              className="absolute bottom-0 right-0 w-0 h-0 border-r-[30px] border-r-transparent border-b-[30px] "
               whileHover={{
                 borderBottomColor: "rgba(41, 231, 35, 0.6)",
                 scale: 1.2,
@@ -245,7 +245,7 @@ const MissionSection = () => {
             
             {/* Pulse ring effect */}
             <motion.div
-              className="absolute inset-0 border-2 border-primary-custom/0 rounded-2xl"
+              className="absolute inset-0  rounded-2xl"
               whileHover={{
                 borderColor: "rgba(41, 231, 35, 0.4)",
                 scale: [1, 1.02, 1],
