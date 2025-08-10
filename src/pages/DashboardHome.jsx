@@ -9,7 +9,7 @@ const DashboardHome = () => {
     return (
         <section className="min-h-[calc(100vh-120px)] flex items-center justify-center  py-8 px-2">
             <div className="container max-w-[90%] mx-auto">
-                <div className="rounded-2xl shadow-2xl bg-base-100">
+                <div className="rounded-2xl shadow-2xl">
                     <div className="flex items-center gap-4 px-6 pt-8 pb-4 border-b border-blue-50">
                         <span className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 text-white shadow">
                             <MdSpaceDashboard className="text-3xl" />

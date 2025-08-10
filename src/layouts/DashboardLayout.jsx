@@ -198,7 +198,7 @@ const DashboardLayout = () => {
         </div>
 
         {/* Page content with better background */}
-        <div className="flex-1 bg-custom min-h-screen">
+        <div className="flex-1 min-h-screen">
           <Outlet />
         </div>
       </div>
