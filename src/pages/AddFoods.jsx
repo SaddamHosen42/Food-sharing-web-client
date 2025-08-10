@@ -25,6 +25,10 @@ const AddFoods = () => {
             title: "Food Added Successfully!",
             showConfirmButton: false,
             timer: 1500,
+            confirmButtonColor: "#10b981", // emerald-500
+            customClass: {
+              confirmButton: 'swal-confirm-btn'
+            }
           });
           form.reset();
           navigate("/available-foods");
@@ -36,6 +40,10 @@ const AddFoods = () => {
           icon: "error",
           title: "Failed to Add Food",
           text: "Please try again later.",
+          confirmButtonColor: "#ef4444", // red-500
+          customClass: {
+            confirmButton: 'swal-confirm-btn'
+          }
         });
       });
 

@@ -3,7 +3,7 @@ import { motion } from "motion/react"; //eslint-disable-line
 
 const Slider3 = () => {
   return (
-    <div className="relative h-screen overflow-hidden">
+    <div className="relative h-screen overflow-hidden">{/* Reverted to h-screen but content will have proper calc height */}
       {/* Background Image with Zoom Effect */}
       <motion.div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -50,42 +50,42 @@ const Slider3 = () => {
       </div>
       
       {/* Content */}
-      <div className="relative z-10 flex items-center h-full">
+      <div className="relative z-10 flex items-center h-[calc(100vh-4rem)] pt-16">{/* Added pt-16 for navbar space */}
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-5xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center">{/* Reduced from max-w-5xl to max-w-4xl */}
             {/* Community Badge */}
             <motion.div
-              className="inline-flex items-center gap-3 bg-lime-500/20 backdrop-blur-sm border border-lime-400/30 rounded-full px-6 py-3 mb-8"
+              className="inline-flex items-center gap-2 bg-lime-500/20 backdrop-blur-sm border border-lime-400/30 rounded-full px-4 py-2 mb-2"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <motion.span
-                className="text-2xl"
+                className="text-xl"
                 animate={{ rotate: [0, 10, -10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
                 🤝
               </motion.span>
-              <span className="text-lime-300 text-lg font-medium">Building Stronger Communities</span>
+              <span className="text-lime-300 text-base font-medium">Building Stronger Communities</span>
             </motion.div>
 
             {/* Main Heading */}
             <motion.h1
-              className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight"
+              className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight "
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.3, delay: 0.5 }}
             >
               <span className="block">Feeding Communities</span>
-              <span className="block bg-gradient-to-r from-lime-400 via-green-500 to-emerald-400 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-lime-400 via-green-500 to-emerald-400 bg-clip-text text-transparent pb-3">
                 Together
               </span>
             </motion.h1>
 
             {/* Description */}
             <motion.p
-              className="text-xl md:text-2xl text-gray-200 mb-12 max-w-4xl mx-auto leading-relaxed"
+              className="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed "
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
@@ -95,7 +95,7 @@ const Slider3 = () => {
 
             {/* Feature Grid */}
             <motion.div
-              className="grid md:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto"
+              className="grid md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.9 }}
@@ -122,7 +122,7 @@ const Slider3 = () => {
               ].map((feature, index) => (
                 <motion.div
                   key={index}
-                  className={`bg-gradient-to-br ${feature.color} backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center`}
+                  className={`bg-gradient-to-br ${feature.color} backdrop-blur-sm border border-white/20 rounded-2xl p-4 text-center`}
                   whileHover={{ 
                     scale: 1.05, 
                     y: -10,
@@ -133,14 +133,14 @@ const Slider3 = () => {
                   transition={{ duration: 0.6, delay: 1.1 + index * 0.1 }}
                 >
                   <motion.div 
-                    className="text-5xl mb-4"
+                    className="text-4xl mb-3"
                     whileHover={{ scale: 1.2, rotate: [0, -10, 10, 0] }}
                     transition={{ duration: 0.5 }}
                   >
                     {feature.icon}
                   </motion.div>
-                  <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-                  <p className="text-gray-300">{feature.desc}</p>
+                  <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                  <p className="text-gray-300 text-sm">{feature.desc}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -152,7 +152,7 @@ const Slider3 = () => {
               transition={{ duration: 0.8, delay: 1.4 }}
             >
               <motion.button
-                className="group relative overflow-hidden bg-gradient-to-r from-lime-600 to-green-600 text-white px-12 py-5 rounded-full font-bold text-xl transition-all duration-300 hover:from-lime-700 hover:to-green-700 hover:shadow-2xl hover:shadow-lime-500/25"
+                className="group relative overflow-hidden bg-gradient-to-r from-lime-600 to-green-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:from-lime-700 hover:to-green-700 hover:shadow-2xl hover:shadow-lime-500/25"
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -176,7 +176,7 @@ const Slider3 = () => {
 
             {/* Impact Stats */}
             <motion.div
-              className="flex flex-wrap justify-center gap-8 mt-16"
+              className="flex flex-wrap justify-center gap-6 mt-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.6 }}
@@ -189,21 +189,21 @@ const Slider3 = () => {
               ].map((stat, index) => (
                 <motion.div
                   key={index}
-                  className="text-center min-w-[120px]"
+                  className="text-center min-w-[100px]"
                   whileHover={{ scale: 1.1, y: -5 }}
                   transition={{ duration: 0.2 }}
                 >
                   <motion.div
-                    className="text-2xl mb-2"
+                    className="text-xl mb-1"
                     animate={{ rotate: [0, 10, -10, 0] }}
                     transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
                   >
                     {stat.icon}
                   </motion.div>
-                  <div className="text-2xl md:text-3xl font-bold text-lime-400">
+                  <div className="text-xl md:text-2xl font-bold text-lime-400">
                     {stat.value}
                   </div>
-                  <div className="text-gray-300 text-sm">{stat.label}</div>
+                  <div className="text-gray-300 text-xs">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>

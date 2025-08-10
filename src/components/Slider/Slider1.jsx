@@ -4,18 +4,19 @@ import { Link } from "react-router";
 
 const Slider1 = () => {
   return (
-    <div className="relative h-screen overflow-hidden">
+    <div className="relative h-screen overflow-hidden">{/* Reverted to h-screen but content will have proper calc height */}
       {/* Background Image with Parallax Effect */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1488459716781-31db52582fe9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1488459716781-31db52582fe9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
         }}
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 2, ease: "easeOut" }}
       />
-      
+
       {/* Animated Gradient Overlay */}
       <motion.div
         className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"
@@ -23,7 +24,7 @@ const Slider1 = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
       />
-      
+
       {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(20)].map((_, i) => (
@@ -46,11 +47,11 @@ const Slider1 = () => {
           />
         ))}
       </div>
-      
+
       {/* Content */}
-      <div className="relative z-10 flex items-center h-full">
+      <div className="relative z-10 flex items-center h-[calc(100vh-4rem)] pt-16">{/* Added pt-16 for navbar space */}
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-4xl">
+          <div className="max-w-3xl">{/* Reduced from max-w-4xl to max-w-3xl */}
             {/* Badge */}
             <motion.div
               className="inline-flex items-center gap-2 bg-green-500/20 backdrop-blur-sm border border-green-400/30 rounded-full px-4 py-2 mb-6"
@@ -59,12 +60,14 @@ const Slider1 = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-green-300 text-sm font-medium">Join the Food Sharing Movement</span>
+              <span className="text-green-300 text-sm font-medium">
+                Join the Food Sharing Movement
+              </span>
             </motion.div>
 
             {/* Main Heading */}
             <motion.h1
-              className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+              className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
@@ -77,12 +80,13 @@ const Slider1 = () => {
 
             {/* Description */}
             <motion.p
-              className="text-xl md:text-2xl text-gray-200 mb-8 max-w-2xl leading-relaxed"
+              className="text-lg md:text-xl text-gray-200 mb-6 max-w-2xl leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Redistribute perfectly good meals before they spoil—help us fight food waste and nourish communities, one plate at a time.
+              Redistribute perfectly good meals before they spoil—help us fight
+              food waste and nourish communities, one plate at a time.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -94,39 +98,41 @@ const Slider1 = () => {
             >
               <Link to="/available-foods">
                 <motion.button
-                  className="group relative overflow-hidden bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:from-green-600 hover:to-emerald-700 hover:shadow-2xl hover:shadow-green-500/25"
+                  className="group relative overflow-hidden bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-full font-semibold text-base transition-all duration-300 hover:from-green-600 hover:to-emerald-700 hover:shadow-2xl hover:shadow-green-500/25"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <span className="relative z-10">Get Started</span>
                   <motion.div
                     className="absolute inset-0 bg-white/20"
-                    initial={{ x: '-100%' }}
-                    whileHover={{ x: '100%' }}
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: "100%" }}
                     transition={{ duration: 0.6 }}
                   />
                 </motion.button>
               </Link>
 
-              <motion.button
-                className="group border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:border-white/50"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Learn More
-                <motion.span
-                  className="inline-block ml-2"
-                  whileHover={{ x: 5 }}
-                  transition={{ duration: 0.2 }}
+              <Link to="/about">
+                <motion.button
+                  className="group border-2 border-white/30 text-white px-6 py-3 rounded-full font-semibold text-base backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:border-white/50"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  →
-                </motion.span>
-              </motion.button>
+                  Learn More
+                  <motion.span
+                    className="inline-block ml-2"
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    →
+                  </motion.span>
+                </motion.button>
+              </Link>
             </motion.div>
 
             {/* Stats */}
             <motion.div
-              className="flex flex-wrap gap-8 mt-12"
+              className="flex flex-wrap gap-6 mt-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
@@ -134,7 +140,7 @@ const Slider1 = () => {
               {[
                 { number: "10K+", label: "Meals Shared" },
                 { number: "5K+", label: "Happy Users" },
-                { number: "100+", label: "Communities" }
+                { number: "100+", label: "Communities" },
               ].map((stat, index) => (
                 <motion.div
                   key={index}
@@ -142,10 +148,10 @@ const Slider1 = () => {
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="text-2xl md:text-3xl font-bold text-green-400">
+                  <div className="text-xl md:text-2xl font-bold text-green-400">
                     {stat.number}
                   </div>
-                  <div className="text-gray-300 text-sm">{stat.label}</div>
+                  <div className="text-gray-300 text-xs">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -155,7 +161,7 @@ const Slider1 = () => {
 
       {/* Decorative Elements */}
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
-      
+
       {/* Animated Shape */}
       <motion.div
         className="absolute top-1/4 right-10 w-32 h-32 border-2 border-green-400/30 rounded-full"

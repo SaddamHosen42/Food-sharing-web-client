@@ -35,6 +35,10 @@ const Login = () => {
           text: `Welcome, ${user.displayName}!`,
           showConfirmButton: false,
           timer: 1500,
+          confirmButtonColor: "#10b981", // emerald-500
+          customClass: {
+            confirmButton: 'swal-confirm-btn'
+          }
         });
         form.reset();
       })
@@ -45,7 +49,10 @@ const Login = () => {
           icon: "error",
           title: "Oops...",
           text: " Invalid email or password!",
-  
+          confirmButtonColor: "#ef4444", // red-500
+          customClass: {
+            confirmButton: 'swal-confirm-btn'
+          }
         });
       });
     setErrorMessage("");

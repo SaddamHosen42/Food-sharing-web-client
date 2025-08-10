@@ -84,9 +84,15 @@ const NavBar = () => {
       text: "You will be logged out.",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
+      confirmButtonColor: "#10b981", // emerald-500 to match your theme
+      cancelButtonColor: "#ef4444", // red-500
       confirmButtonText: "Yes, log out!",
+      cancelButtonText: "Cancel",
+      buttonsStyling: true, // Ensure custom styling is applied
+      customClass: {
+        confirmButton: 'swal-confirm-btn',
+        cancelButton: 'swal-cancel-btn'
+      }
     }).then((result) => {
       if (result.isConfirmed) {
         logOut()
@@ -97,6 +103,10 @@ const NavBar = () => {
               icon: "success",
               timer: 1500,
               showConfirmButton: false,
+              confirmButtonColor: "#10b981", // emerald-500
+              customClass: {
+                confirmButton: 'swal-confirm-btn'
+              }
             });
             window.location.reload();
           })
@@ -106,6 +116,10 @@ const NavBar = () => {
               title: "Error!",
               text: "Something went wrong during logout.",
               icon: "error",
+              confirmButtonColor: "#ef4444", // red-500
+              customClass: {
+                confirmButton: 'swal-confirm-btn'
+              }
             });
           });
       }
@@ -114,7 +128,7 @@ const NavBar = () => {
   return (
     <div className="w-full bg-base-200 shadow-xl fixed top-0 z-10 backdrop-blur-lg">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="navbar justify-between py-3">
+        <div className="navbar justify-between py-4">
           <div className="navbar-start items-center">
             <div className="dropdown">
               <div

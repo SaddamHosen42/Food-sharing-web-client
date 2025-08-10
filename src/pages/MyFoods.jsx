@@ -39,11 +39,20 @@ const MyFoods = () => {
         icon: "success",
         timer: 1500,
         showConfirmButton: false,
+        confirmButtonColor: "#10b981", // emerald-500
+        customClass: {
+          confirmButton: 'swal-confirm-btn'
+        }
       });
       queryClient.invalidateQueries(["myFoods"]); //  refetch list
     },
     onError: () => {
-      Swal.fire("Error!", "Failed to delete the food.", "error");
+      Swal.fire("Error!", "Failed to delete the food.", "error", {
+        confirmButtonColor: "#ef4444", // red-500
+        customClass: {
+          confirmButton: 'swal-confirm-btn'
+        }
+      });
     },
   });
 
@@ -53,9 +62,15 @@ const MyFoods = () => {
       text: "You will delete this food.",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
+      confirmButtonColor: "#ef4444", // red-500 for delete action
+      cancelButtonColor: "#6b7280", // gray-500
       confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "Cancel",
+      buttonsStyling: true,
+      customClass: {
+        confirmButton: 'swal-confirm-btn',
+        cancelButton: 'swal-cancel-btn'
+      }
     }).then((result) => {
       if (result.isConfirmed) {
         deleteMutation.mutate(id);
