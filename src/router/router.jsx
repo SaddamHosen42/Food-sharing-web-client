@@ -14,6 +14,7 @@ import axios from "axios";
 import UpdateFood from "../pages/UpdateFood";
 import Loading from "../components/Loading";
 import ErrorPages from "../pages/ErrorPages";
+import DashboardLayout from "../layouts/DashboardLayout";
 
 export const router = createBrowserRouter([
   {
@@ -23,59 +24,55 @@ export const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
-        loader: () => axios.get("https://food-sharing-web-server-tau.vercel.app/featured-foods"),
-        hydrateFallbackElement: <Loading></Loading>,
+        loader: () =>
+          axios.get(
+            "https://food-sharing-web-server-tau.vercel.app/featured-foods"
+          ),
+        hydrateFallbackElement: <Loading />,
       },
       {
         path: "available-foods",
         Component: AvailableFoods,
-        loader:()=>axios.get("https://food-sharing-web-server-tau.vercel.app/available-foods"),
-        hydrateFallbackElement:<Loading></Loading>
+        loader: () =>
+          axios.get(
+            "https://food-sharing-web-server-tau.vercel.app/available-foods"
+          ),
+        hydrateFallbackElement: <Loading />,
       },
       {
         path: "about",
         Component: About,
       },
+
       {
-        path: "add-food",
-        element: (
-          <PrivateRoute>
-            <AddFoods></AddFoods>
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "my-foods",
-        element: (
-          <PrivateRoute>
-            <MyFoods></MyFoods>
-          </PrivateRoute>
-        ),
-        hydrateFallbackElement:<Loading></Loading>
-      },
-      {
-        path:"update-food/:id",
-        loader: ({params}) => axios.get(`https://food-sharing-web-server-tau.vercel.app/foods/${params.id}`),
-        Component:UpdateFood,
-        hydrateFallbackElement:<Loading></Loading>
+        path: "update-food/:id",
+        loader: ({ params }) =>
+          axios.get(
+            `https://food-sharing-web-server-tau.vercel.app/foods/${params.id}`
+          ),
+        Component: UpdateFood,
+        hydrateFallbackElement: <Loading />,
       },
       {
         path: "food-request",
         element: (
           <PrivateRoute>
-            <FoodRequest></FoodRequest>
+            <FoodRequest />
           </PrivateRoute>
         ),
       },
       {
-        path:"food-details/:id",
-        loader: ({params}) => axios.get(`https://food-sharing-web-server-tau.vercel.app/foods/${params.id}`),
+        path: "food-details/:id",
+        loader: ({ params }) =>
+          axios.get(
+            `https://food-sharing-web-server-tau.vercel.app/foods/${params.id}`
+          ),
         element: (
           <PrivateRoute>
-           <FoodDetails></FoodDetails>
+            <FoodDetails />
           </PrivateRoute>
         ),
-        hydrateFallbackElement:<Loading></Loading>
+        hydrateFallbackElement: <Loading />,
       },
       {
         path: "login",
@@ -87,8 +84,27 @@ export const router = createBrowserRouter([
       },
       {
         path: "*",
-        Component:ErrorPages,
-      }
+        Component: ErrorPages,
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout />
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        path: "my-foods",
+        element: <MyFoods />,
+        hydrateFallbackElement: <Loading />,
+      },
+      {
+        path: "add-food",
+        element: <AddFoods />,
+      },
     ],
   },
 ]);

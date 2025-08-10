@@ -43,35 +43,16 @@ const publicLinks = (
 const protectedLinks = (
   <>
     <NavLink
-      to="/add-food"
+      to="/dashboard"
        className={({ isActive }) =>
         isActive
           ? "text-primary-custom underline underline-offset-4  px-3 py-2"
           : "text-base-content hover:text-primary-custom hover:scale-105 transform px-3 py-2"
       }
     >
-      Add Food
+      Dashboard
     </NavLink>
-    <NavLink
-      to="/my-foods"
-      className={({ isActive }) =>
-        isActive
-          ? "text-primary-custom underline underline-offset-4  px-3 py-2"
-          : "text-base-content hover:text-primary-custom hover:scale-105 transform px-3 py-2"
-      }
-    >
-      My Foods
-    </NavLink>
-    <NavLink
-      to="/food-request"
-     className={({ isActive }) =>
-        isActive
-          ? "text-primary-custom underline underline-offset-4  px-3 py-2"
-          : "text-base-content hover:text-primary-custom hover:scale-105 transform px-3 py-2"
-      }
-    >
-      Food Request
-    </NavLink>
+   
   </>
 );
 
