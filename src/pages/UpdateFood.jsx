@@ -32,7 +32,7 @@ const UpdateFood = () => {
             showConfirmButton: false,
             timer: 1500,
           });
-           navigate("/my-foods");
+           navigate("/dashboard/my-foods");
         }
       })
       .catch((error) => {

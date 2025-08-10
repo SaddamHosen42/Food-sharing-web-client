@@ -1,14 +1,9 @@
 import React from "react";
 import useAuth from "../hooks/useAuth";
-import {
-  FaBars,
-  FaSignOutAlt,
-  FaUser,
-} from "react-icons/fa";
-import { TfiAnnouncement } from "react-icons/tfi";
+import { FaBars, FaSignOutAlt, FaUser } from "react-icons/fa";
 import { Link, NavLink, Outlet } from "react-router";
 import { IoHomeSharp } from "react-icons/io5";
-import { CgProfile } from "react-icons/cg";
+import { MdOutlineAddBox, MdOutlineFastfood, MdOutlineRequestPage } from "react-icons/md";
 import { motion } from "framer-motion"; //eslint-disable-line
 import Swal from "sweetalert2";
 
@@ -65,7 +60,7 @@ const DashboardLayout = () => {
                   }
                   `}
         >
-          <CgProfile className="text-xl relative z-10" />
+          <MdOutlineAddBox className="text-xl relative z-10" />
           <span className="font-semibold relative z-10">Add Food</span>
         </NavLink>
       </motion.div>
@@ -87,8 +82,23 @@ const DashboardLayout = () => {
                   }
                   `}
         >
-          <TfiAnnouncement className="text-xl relative z-10" />
+          <MdOutlineFastfood className="text-xl relative z-10" />
           <span className="font-semibold relative z-10">My Foods</span>
+        </NavLink>
+        <NavLink
+          to="/dashboard/food-request"
+          onClick={closeMobileDrawer}
+          className={({ isActive }) => `
+                    flex items-center space-x-3 px-4 py-2 rounded-lg transition-all duration-200 group
+                  ${
+                    isActive
+                      ? "bg-blue-50 text-blue-700 border-l-4 border-blue-600"
+                      : "text-gray-600 hover:bg-gray-50 hover:text-gray-800"
+                  }
+                  `}
+        >
+          <MdOutlineRequestPage className="text-xl relative z-10" />
+          <span className="font-semibold relative z-10">My Foods Request</span>
         </NavLink>
       </motion.div>
     </>
@@ -188,7 +198,7 @@ const DashboardLayout = () => {
         </div>
 
         {/* Page content with better background */}
-        <div className="flex-1 bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 min-h-screen">
+        <div className="flex-1 bg-custom min-h-screen">
           <Outlet />
         </div>
       </div>
@@ -214,7 +224,7 @@ const DashboardLayout = () => {
             <div className="absolute top-16 left-8 w-1 h-1 bg-purple-400/60 rounded-full animate-ping delay-1000"></div>
             <div className="absolute bottom-12 right-6 w-3 h-3 bg-cyan-400/40 rotate-45 animate-bounce delay-500"></div>
 
-            <div className="relative z-10">
+            <div className="relative z-10 text-primary-custom font-bold text-xl">
               <Link className="mb-6" to="/">
                 FoodBridge
               </Link>

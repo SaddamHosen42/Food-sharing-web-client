@@ -94,7 +94,7 @@ const MyFoodList = ({ foods, handelDelete }) => {
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center gap-3">
                     <Link
-                      to={`/update-food/${req._id}`}
+                      to={`update-food/${req._id}`}
                       className="btn btn-sm bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white border-none rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
                     >
                       ✏️ Update

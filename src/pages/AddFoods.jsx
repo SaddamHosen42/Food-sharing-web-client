@@ -50,12 +50,13 @@ const AddFoods = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-450px)] container mx-auto max-w-[90%] mt-30 mb-10">
-      <h1 className="text-3xl font-bold text-center mb-6 text-primary-custom">Add a New Food</h1>
-      <form
-        onSubmit={handleAddFood}
-        className="grid grid-cols-1 lg:grid-cols-2 gap-6  p-8 rounded-2xl shadow-xl w-full bg-base-200"
-      >
+    <section className="bg-custom">
+      <div className="container mx-auto max-w-[90%] mt-30 mb-10">
+        <h1 className="text-3xl font-bold text-center mb-6 text-primary-custom">Add a New Food</h1>
+        <form
+          onSubmit={handleAddFood}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6  p-8 rounded-2xl shadow-xl w-full bg-base-200"
+        >
         {/* Food Name */}
         <div>
           <legend className="text-lg font-medium mb-2">Food Name</legend>
@@ -194,6 +195,7 @@ const AddFoods = () => {
         </div>
       </form>
     </div>
+    </section>
   );
 };
 

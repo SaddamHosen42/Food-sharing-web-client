@@ -15,6 +15,7 @@ import UpdateFood from "../pages/UpdateFood";
 import Loading from "../components/Loading";
 import ErrorPages from "../pages/ErrorPages";
 import DashboardLayout from "../layouts/DashboardLayout";
+import DashboardHome from "../pages/DashboardHome";
 
 export const router = createBrowserRouter([
   {
@@ -44,23 +45,6 @@ export const router = createBrowserRouter([
         Component: About,
       },
 
-      {
-        path: "update-food/:id",
-        loader: ({ params }) =>
-          axios.get(
-            `https://food-sharing-web-server-tau.vercel.app/foods/${params.id}`
-          ),
-        Component: UpdateFood,
-        hydrateFallbackElement: <Loading />,
-      },
-      {
-        path: "food-request",
-        element: (
-          <PrivateRoute>
-            <FoodRequest />
-          </PrivateRoute>
-        ),
-      },
       {
         path: "food-details/:id",
         loader: ({ params }) =>
@@ -97,6 +81,10 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
+        index: true,
+        element: <DashboardHome />,
+      },
+      {
         path: "my-foods",
         element: <MyFoods />,
         hydrateFallbackElement: <Loading />,
@@ -104,6 +92,19 @@ export const router = createBrowserRouter([
       {
         path: "add-food",
         element: <AddFoods />,
+      },
+      {
+        path: "food-request",
+        element: <FoodRequest />,
+      },
+      {
+        path: "my-foods/update-food/:id",
+        loader: ({ params }) =>
+          axios.get(
+            `https://food-sharing-web-server-tau.vercel.app/foods/${params.id}`
+          ),
+        Component: UpdateFood,
+        hydrateFallbackElement: <Loading />,
       },
     ],
   },
