@@ -1,5 +1,10 @@
 # 🍱 FoodBridge - Community Food Sharing Platform
 
+<div align="center">
+  <img src="https://i.ibb.co.com/tTjbrKHB/foodbridge.png" alt="FoodBridge image" />
+</div>
+
+
 **Live URL:** [https://foodbridge-1.web.app/](https://foodbridge-1.web.app/)
 
 ## 📌 Project Purpose
